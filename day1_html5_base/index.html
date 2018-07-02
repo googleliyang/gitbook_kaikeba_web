@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day1</title>
+    <style>
+        header, nav, article, section, aside, footer {
+            display: block;
+            height: 300px;
+            text-align: center;
+            font-size: 30px;
+            line-height: 300px;
+            color: #fff;
+        }
+        header, footer{
+            background: red;
+        }
+        nav{
+            background: orange;
+        }
+        aside {
+            background: pink;
+        }
+        section {
+            background: green;
+        }
+        section, aside {
+            width: 50%;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+
+<header> Header </header>
+
+<nav> Nav </nav>
+
+<article>
+    <section> Section </section>
+    <aside> Aside </aside>
+</article>
+
+<footer>
+    Footer file <input type="file" id="file">
+    <img src="" alt="" id="img">
+</footer>
+
+<script>
+
+    function listenNet () {
+        window.ononline = function () {
+            alert('connected')
+        }
+        window.onoffline=function () {
+           alert('lose connection')
+        }
+    }
+
+    function checkNetwork () {
+        return window.navigator.onLine
+    }
+
+    initFileReader()
+    function initFileReader() {
+       var file = document.querySelector('#file')
+       var imgDom = document.querySelector("#img")
+       file.onchange = function () {
+          var fileSource = this.files[0]
+          // name, can use the first word first  letter
+          var fReader = new FileReader()
+          fReader.readAsDataURL(fileSource)
+          fReader.onload = function () {
+              console.log(fReader.result)
+            imgDom.src = fReader.result
+          }
+       }
+    }
+
+    function test() {
+        listenNet()
+        alert('check network status is' + checkNetwork())
+    }
+
+
+    //  compatible way for html5 new tag on ie8， sure
+    function compatibleHtml5Tag() {
+        // css set tag display block
+        document.createElement("header")
+    }
+
+
+
+
+</script>
+
+<!--[if lte IE 8]>
+<script src="https://cdn.bootcss.com/html5shiv/r29/html5.js"></script>
+<![endif]-->
+
+<script>
+    // 兼容 IE
+    // google 播放器测试
+</script>
+
+</body>
+</html>
