@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day1</title>
+  <style>
+  header, nav, article, section, aside, footer, figure {
+    display: block;
+    height: 300px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 300px;
+    color: #fff;
+  }
+  figure {
+    margin: 0;
+    width: 50%;
+    float: left;
+  }
+  header, footer{
+    background: red;
+  }
+  nav{
+    background: orange;
+  }
+  aside {
+    background: pink;
+  }
+  section {
+    background: green;
+  }
+  section, aside {
+    width: 50%;
+    float: left;
+  }
+  figure {
+    background: orange;
+    position: relative;
+  }
+  figure img{
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    right: 50%;
+    width: 50px;
+  }
+  main::after {
+    content:".";
+    clear:both;
+    display:block;
+    height:0;
+    overflow:hidden;
+    visibility:hidden;
+  }
+  </style>
+</head>
+<body>
+
+  <header> Header </header>
+
+  <nav> Nav </nav>
+
+  <main>
+    <article>
+      <section> Section </section>
+      <aside> Aside </aside>
+    </article>
+    <section>
+      <input type="file" id="file">
+    </section>
+    <figure>
+      <img src="" alt="" id="img">
+      <figcaption>Imgage show area</figcaption>
+    </figure>
+  </main>
+
+  <section>
+    <!-- if chrome autoplay issue -->
+    <!-- if not add muted attr, when you visit the page second time, video can not auto play -->
+    <video width="400" controls autoplay='true' muted>
+      <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+        <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">
+          <source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
+          Your browser does not support HTML5 video.
+        </video>
+  </section>
+
+  <footer>
+    <small>copyright@ ..</small>
+  </footer>
+
+  <script>
+
+  function listenNet () {
+    window.ononline = function () {
+      alert('connected')
+    }
+    window.onoffline=function () {
+      alert('lose connection')
+    }
+  }
+
+  function checkNetwork () {
+    return window.navigator.onLine
+  }
+
+  initFileReader()
+  function initFileReader() {
+    var file = document.querySelector('#file')
+    var imgDom = document.querySelector("#img")
+    file.onchange = function () {
+      var fileSource = this.files[0]
+      // name, can use the first word first  letter
+      var fReader = new FileReader()
+      fReader.readAsDataURL(fileSource)
+      fReader.onload = function () {
+        console.log(fReader.result)
+        imgDom.src = fReader.result
+      }
+    }
+  }
+
+  function test() {
+    listenNet()
+    alert('check network status is' + checkNetwork())
+  }
+
+  //  compatible way for html5 new tag on ie8， sure
+  function compatibleHtml5Tag() {
+    // css set tag display block
+    document.createElement("header")
+  }
+
+  </script>
+
+  <!--[if lte IE 8]>
+  <script src="https://cdn.bootcss.com/html5shiv/r29/html5.js"></script>
+  <![endif]-->
+
+  <script>
+  // 兼容 IE
+  // google 播放器测试
+  </script>
+
+</body>
+</html>

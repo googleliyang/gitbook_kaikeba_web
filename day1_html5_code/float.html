@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  /*the first section will leave out doc flow, the second section below  first*/
+  /*if section part is textarea will surrond the first float dom*/
+  section {
+    height: 500px;
+    background: green;
+    min-width: 300px;
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+  }
+  main section:nth-of-type(1) {
+    float: left;
+    height: 200px;
+    background: red;
+  }
+  </style>
+</head>
+<body>
+  <main>
+    <section>
+      left section
+    </section>
+    <section>
+      right section
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Storage</title>
+</head>
+<body>
+
+    <script>
+      var store = function (ins) {
+        let tem = ins
+        return {
+          setData: function (key, value) {
+            return tem.setItem(key, value)
+          },
+          getData: function (key, value) {
+            return tem.getItem(key, value)
+          },
+          removeData: function (key) {
+            return tem.removeItem(key)
+          }
+        }
+      }
+
+      function test() {
+        var ins = store(localStorage)
+        if (!ins) {
+          throw new Error('get store data error')
+        }
+        ins.setData('name', 'Jpn Snow')
+        console.log('after set the name value is ' + ins.getData('name'))
+        ins.removeData('name')
+        console.log('after remove the name val is ' + ins.getData('name'))
+      }
+
+      test()
+
+    </script>
+
+</body>
+</html>
