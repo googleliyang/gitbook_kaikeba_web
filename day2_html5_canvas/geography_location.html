@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<mark id="demo"></mark>
+<body>
+  <script>
+
+  test ()
+
+  function test () {
+    getLocation()
+    // watchLocation()
+  }
+
+  var x=document.getElementById("demo");
+  function watchLocation()
+  {
+    if (navigator.geolocation)
+    {
+      navigator.geolocation.watchPosition(showPosition);
+    }
+    else{x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+  function showPosition(position)
+  {
+    x.innerHTML="Latitude: " + position.coords.latitude +
+    "<br />Longitude: " + position.coords.longitude;
+  }
+
+  function getLocation () {
+    if (navigator.geolocation) {
+      return navigator.geolocation.getCurrentPosition(function(pos){
+        console.log('get current location latitude is ' + pos.coords.latitude)
+        console.log('get current location longitude is ' + pos.coords.longitude)
+      }, function (error) {
+        console.error('miss error' + error)
+      })
+    }
+  }
+
+  </script>
+</body>
+</html>
