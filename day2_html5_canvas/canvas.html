@@ -5,31 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+    canvas {
+      border: 1px solid red;
+      /*background, background img*/
+      /*border-image-source: url('./imgs/mountain.png');        */
+    }
+  </style>
 </head>
 <body>
-  <canvas id="canvas" width="300" height="300" id="canvas"></canvas>
+  <canvas id="canvas" width="500" height="500" id="canvas"></canvas>
 
   <script>
-
+  testLineDouble()
+  function testLineDouble () {
     var canvasDom = document.querySelector('#canvas')
     let ctx = canvasDom.getContext('2d')
     ctx.moveTo(100, 100)
     ctx.lineTo(100, 300)
-    ctx.lineTo(300, 300)
-    ctx.lineTo(300, 100)
+    // ctx.lineTo(300, 300)
+    // ctx.lineTo(300, 100)
     ctx.strokeStyle = "green"
-    ctx.closePath()
-    ctx.lineWidth = 20
+    // ctx.closePath()
+    // ctx.lineWidth = 20
     ctx.stroke()
-
+    ctx.beginPath()
     // i : 颜色重合
     ctx.moveTo(100, 100)
     ctx.lineTo(100, 300)
-    ctx.lineTo(300, 300)
-    ctx.lineTo(300, 100)
-    ctx.closePath()
+    ctx.moveTo(200, 100)
+    ctx.lineTo(200, 300)
+    // ctx.lineTo(300, 300)
+    // ctx.lineTo(300, 100)
+    // ctx.closePath()
     ctx.strokeStyle = "#ff0"
     ctx.stroke()
+
+    ctx.beginPath()
+    ctx.moveTo(300, 100)
+    ctx.lineTo(300, 300)
+    // ctx.lineTo(300, 300)
+    // ctx.lineTo(300, 100)
+    ctx.strokeStyle = "green"
+    // ctx.closePath()
+    // ctx.lineWidth = 20
+    ctx.stroke()
+  }
+
 
   </script>
 </body>
