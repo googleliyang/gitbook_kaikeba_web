@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    .content {
+      height: 200px;
+      width: 200px;
+      background: orange;
+      text-align: center;
+      line-height: 200px;
+      color: #fff;
+      font-family: 微软雅黑;
+      border: 30px solid transparent;
+      /*! 切割背景 */
+      border-image: url('./imgs/heart.png');
+      /*超出图片大小后，将只在四个角显示*/
+      border-image-slice: 30px;
+      border-image-repeat: repeat;
+      /*border-image-width: 30px;*/
+      /*border-image-slice: 20px;*/
+      /*border-radius: 20px 40px;*/
+      /*水平 垂直 模糊度 阴影颜色*/
+      /*box-shadow: */
+      /*box-shadow: 20px 10px 5px red;*/
+    }
+
+    .border-gradient {
+      /*need set border width height*/
+      border-image: linear-gradient(red, yellow) 10;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <main>
+    <section class="content"> 中华 </section>
+  </main>
+</body>
+</html>
