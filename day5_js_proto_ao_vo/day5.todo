@@ -1,0 +1,33 @@
+ ☐  Ao Eo @critical 
+ ☐ Function prototype - Object Prototype @today
+ ☐ Git book, home work, mindnote, moring & night remember @today
+ 
+
+ ☐ FAQ  when node js have __proto__ on obj 
+
+
+cmd + enter / cmd + i 添加任务 行首会出现 ☐
+
+ctrl + c 取消任务 行首会出现 ✘
+
+cmd + d 完成任务 行首会出现 ✔
+
+@tagname 添加标签
+
+指针移动到链接上 cmd + shift + U 可以在浏览器中打开指定url
+
+指针移动到 文件路径 ctrl + o 用 sublime 打开指定路径文件
+
+cmd + shift + A 档案任务完成情况梳理
+
+输入 task 按下 tab 生成 task＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+
+c + tab 生成 @critical 表示最重要的
+
+h + tab 生成 @high 表示重要的
+
+l + tab 生成 @low 表示低重要的
+
+t + tab 生成 @today 表示今日要完成的
+
+输入 s + tab 得到当前时间 @started(17-05-19 16:00)
