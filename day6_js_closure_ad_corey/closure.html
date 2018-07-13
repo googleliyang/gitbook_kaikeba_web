@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>closure</title>
+  <style>
+    li {
+      width: 100px;
+      height: 50px;
+      background: orange;
+      border-bottom: 3px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <ul id = 'ul'>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+
+<script>
+    simple_closure()
+    function simple_closure() {
+      /**
+      * outer 外部函数
+      * @return {function} closure function, 内部 Ao 引用 外部 data(Vo)
+      * inner 引用的 data 对象 不会随着 outer 执行完成而销毁, 存于内存中
+      */
+      function outer () {
+        let data = {name: 'john snow'}
+        return function () {
+          return data
+        }
+      }
+      let closure_func = outer()
+      let closure_func1 = outer()
+      let data = closure_func()
+      console.log('Get data from closure is', data)
+      console.log('Call outer twice time, whether same inner ? ', closure_func1 === closure_func)        // false
+      // 执行返回的 闭包函数两次，拿到的 data 值时一样的，因为一直在内存中缓存
+      // 而 执行两次 outer 函数返回的 匿名函数应该是两个，则 closure_func() != closure_func1()
+      console.log('Call outer twice time, whether same data  ?', closure_func() === closure_func())     // false
+      // 释放 data变量
+      closure_func = null
+    }
+
+    init_click()
+    function init_click () {
+      let lis = document.querySelectorAll('#ul li')
+      var i = 0;
+      l = lis.length
+      for (; i < l; i++) {
+        lis[i].onclick = (function (j) {
+          // *below function should not add param, otherwise the first param will be event object
+          return function () {
+            console.log('current trigger index is', j)
+          }
+        })(i)
+      }
+    }
+
+</script>
+
+</body>
+</html>
