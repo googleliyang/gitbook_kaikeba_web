@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn" > Toggle modal </button>
+
+  <script>
+
+  console.log('...')
+  // here should add !, ohterwise, chrome prompt console.log... is not a function
+  // such as, chrome parse as online
+  !(function (doc) {
+    doc.querySelector('#btn').onclick = (function () {
+      return function () {
+        SingleTon.getInstance('This is a modal').toggle()
+      }
+    })()
+  })(window.document)
+
+  var SingleTon = (function () {
+    function SingletonConstructor () {
+      var div = document.createElement('div')
+      div.style.display = 'none'
+      document.body.appendChild(div)
+      return div
+    }
+    var instance = null
+    return {
+      getInstance: function (content) {
+        instance || (instance = new SingletonConstructor())
+        instance.innerHTML = content
+        instance.show = function () {
+          this.style.display = 'block'
+        }
+        instance.hide = function () {
+          this.style.display = 'none'
+        }
+        instance.toggle = function () {
+          var if_show = this.style.display === 'block'
+          this.style.display = if_show ? 'none' : 'block'
+        }
+        return instance
+      }
+    }
+  })()
+  </script>
+
+</body>
+</html>
