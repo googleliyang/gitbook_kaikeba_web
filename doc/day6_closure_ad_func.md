@@ -191,7 +191,11 @@ function () {
   对比 fetch axios
 
   https://wendux.github.io/dist/#/doc/flyio/compare
--
+
+- js 执行过程, 预解析阶段
+  1 声明提前(变量和方法)
+  2 词法校验
+
 
 # FAQ
 - 避免全局变量的污染 | 闭包对比 let tem = {[key]: value}
