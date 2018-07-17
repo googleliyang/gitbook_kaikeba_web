@@ -4,7 +4,7 @@ This page introduce jquery source sealing, as jquery source code write animation
 
 jquery 通过对外暴露$对象获取, 自定义伪数组元素集合或单个元素(之所以使用伪数组，为了更好对其扩展，例如 使其 获取到的元素对象身上，具备很多遍历方法, $.fn.each )
 
-## 伪数组定义 ?
+## 伪数组定义
 
 - length 长度为 0
 - length 长度不为 0，且 length -1 上有有效值
@@ -104,7 +104,8 @@ https://segmentfault.com/a/1190000011800427
 
 ## 模仿 jquery 动画封装
 
-    https://codepen.io/googleliyang/pen/wxGXKM  
+https://codepen.io/googleliyang/pen/wxGXKM  
+
 
 代码地址：
 
