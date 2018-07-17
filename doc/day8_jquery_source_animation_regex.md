@@ -104,7 +104,26 @@ https://segmentfault.com/a/1190000011800427
 
 ## 模仿 jquery 动画封装
 
-https://codepen.io/googleliyang/pen/wxGXKM  
+### 代码摘取
+```js
+// 使用
+var init = select.prototype.init = function () {// ....}
+// 为对象添加扩展方法
+select.fn.extend({})
+
+// 在 jquery 中添加全局扩展方式为
+jQuery.extend({method: function (){}}) //
+
+jQuery.fn.test = function(){
+    alert("这是jQuery对象方法!");
+}
+jQuery("div").click(function(){
+    $(this).test();   //在当前的jQuery对象上调用test()方法
+});
+
+```
+
+https://codepen.io/googleliyang/pen/wxGXKM 
 
 
 代码地址：
@@ -115,4 +134,3 @@ https://github.com/googleliyang/kaikeba/tree/master/day8_jquery_source_animation
 
 ## FAQ
 - js 动画抖动往往是因为动画频率和电脑频率不一致
--
