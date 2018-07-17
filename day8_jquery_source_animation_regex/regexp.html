@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则表达式</title>
+</head>
+<body>
+	<script>
+		// 1.概念：有普通字符与元字符组成的模式，用来匹配文本，或检测文本模式。
+		// a b c
+		// . * [] () {} \r \n \f \t \v
+		// 2.创建
+		// 1）直接量 var r = /a/(g|i|m); 推荐
+		// 2) 构造函数 var r = new RegExp('a', g/m/i);
+		// 3. 修饰符
+		// 1）g - global 2）i -> ignorecase 3) m - multiline
+		// var r = /a/g;
+		// 4. 元字符
+		// 1）\d 匹配数字  \D
+		// 2）.  匹配单个字符
+		// 3）\w 匹配单词（数字 字母 下划线） \W
+		// 4）\s 匹配不可见字符 \S
+		// 5) \b 匹配单词分界 \B
+		// 6) \r \n \v \t
+		// 7）范围匹配
+		// 8) ^ 以什么开头 $ 以什么结尾
+		// [abc] 匹配a或b或c 不是匹配abc 如果想表示的话= (abc)
+		// 5. 量词：指定匹配个数
+		// 1）* 0 或 多个
+		// 2）+ 1 或 多个
+		// 3）{x, y} 匹配 至少x个，最多y个
+		// 	{x} 就匹配x个
+		//  {x,}最少x个
+		//  {,y}最多y个
+		// 6.分组
+		// ()来分组 想要去掉分组
+		// (?:abc)
+		// 7.正则表达式对象的方法
+		// 1）test('string')
+		// 2) exec('string')
+
+		var str = 'abcbcaerf';
+		// var r1 = /cA/i;
+		// console.log(r1.test(str));
+		// var ret = r1.exec(str);
+		// console.log(ret);
+		var r2 = /a/g;
+		// var ret = r2.exec(str);
+
+		// console.log(ret);
+		// ret = r2.exec(str);
+		// console.log(ret);
+		// ret = r2.exec(str);
+		// console.log(ret);
+		// while(ret = r2.exec(str)){
+		// 	console.log(ret);
+		// }
+		// var r3 = /.*(cb).*(er).+/g;
+		// var ret = r3.exec(str);
+		// console.log(ret);
+
+		// ret = r3.exec(str);
+		// console.log(ret);
+		// str.replace match search split
+		xx.xx.dd@163.com \.
+	</script>
+</body>
+</html>
