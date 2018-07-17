@@ -123,7 +123,7 @@ jQuery("div").click(function(){
 
 ```
 
-https://codepen.io/googleliyang/pen/wxGXKM 
+https://codepen.io/googleliyang/pen/wxGXKM
 
 
 代码地址：
