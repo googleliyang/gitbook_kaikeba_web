@@ -208,6 +208,25 @@ jQuery("div").click(function(){
 
 ```
 
+### fade 动画扩展
+```js
+fadeIn: function (time, callBack) {
+  this.each(function (el) {
+      el.timer && clearInterval(el.timer)
+      el.style.opacity = 0
+      el.timer = setInterval(function () {
+          let opa = parseFloat(el.style.opacity) + parseFloat(1/time*20)
+          el.style.opacity = opa > 1 ? ~~opa : opa
+          if (el.style.opacity >= 1) {
+            clearInterval(el.timer)
+            callBack && callBack(el)
+          }
+      }, 20)
+  })
+  return this
+}
+```
+
 https://codepen.io/googleliyang/pen/wxGXKM
 
 

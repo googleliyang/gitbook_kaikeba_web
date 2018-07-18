@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fade animation</title>
+  <style>
+    section {
+      height: 300px;
+      width: 300px;
+      background: orange;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+<main>
+    <button id="btn_in">fade in</button>
+    <button id="btn_out">fade out</button>
+    <section id='content'></section>
+</main>
+
+<script src="./move-0.1.4.js"></script>
+<script>
+  document.querySelector('#btn_in').onclick = () => {
+    _S('#content').fadeIn(3000)
+  }
+  document.querySelector('#btn_out').onclick = () => {
+    _S('#content').fadeOut(3000)
+  }
+</script>
+</body>
+</html>
