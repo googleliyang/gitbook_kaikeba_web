@@ -104,7 +104,7 @@ https://segmentfault.com/a/1190000011800427
 
 ## 正则表达式
 由普通字符和元字符组成的模式，用来匹配文本，或检测文本模式
-普通字符, 如 a b c
+普通字符(见字符便知道含义), 如 a b c
 
 元字符 . * [] () \r \n \f \t \v ？
 
@@ -170,9 +170,14 @@ var str = 'abcabcabc'
   console.log(ret)  // res array
 }
 
+// 分组
+var str = 'abcbcaerf'
+var r3 = /.*(cb).*(er).+/g
+var ret = r3.exec(str)
+console.log(ret)
+
+
 ```
-
-
 
 ### 修饰符
 - g - global 全局匹配
@@ -180,8 +185,6 @@ var str = 'abcabcabc'
 - m - multiline 多行匹配
 
 
-
-```
 
 
 ## 模仿 jquery 动画封装
@@ -216,3 +219,4 @@ https://github.com/googleliyang/kaikeba/tree/master/day8_jquery_source_animation
 
 ## FAQ
 - js 动画抖动往往是因为动画频率和电脑频率不一致
+- [^a] 是取反
