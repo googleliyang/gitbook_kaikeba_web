@@ -65,3 +65,25 @@ https://juejin.im/post/5a98ea2f6fb9a028bb186f34
 - 数据在内存中是以 二进制 存储的
 - 文件 io 传输，以 字节数组形式，一个字节 = 8 bit, 8 位 为一个二进制基本组成
 - 汉字转二进制，根据编码获取 汉字对应的编码数字，再将数字转为 二进制
+
+```Java
+
+static void Main(string[] args)
+        {
+            getByte();
+        }
+
+        public static void getByte()
+        {
+            String unicodeString = "汉字与二进制码的转换";
+            Byte[] encodedBytes = Encoding.GetEncoding("gb2312").GetBytes(unicodeString);
+            for (int i = 0; i < encodedBytes.Length; i++)
+            {
+                Console.Write(encodedBytes[i]+" ");
+            }
+            Console.WriteLine();
+            String strName = Encoding.GetEncoding("gb2312").GetString(encodedBytes);
+            Console.Write(strName);
+            Console.Read();
+        }
+```
