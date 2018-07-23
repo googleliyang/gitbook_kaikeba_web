@@ -2,11 +2,12 @@ Day 5, for js prototype
 
 ## Attension
 
-.1 分清，js __proto__ 只有作为对象时，才会有这个属性，Object.prototyp 调用了 prototype (作为构造函数时才会存在) 所以此处是函数, Object.__proto__ 则 此时 Object 作为 Function 实例化出来的对象
+.1 分清，js \__proto\__ 只有作为对象时，才会有这个属性，Object.prototyp 调用了 prototype (作为构造函数时才会存在) 所以此处是函数, Object.\__proto\__ 则 此时 Object 作为 Function 实例化出来的对象
 在 Object 中这两个属性同时存在
 
+.2 原型链在往下下一级指向时，需要加 \__proto\__， Function.prototype !== Object.prototype 需要将 Function.prototype 作为一个由 Object 创建出来的对象，也就是 Function.prototype 的指向 Object.\__proto\__
 
-.2 原型链在往下下一级指向时，需要加 __proto__， Function.prototype !== Object.prototype 需要将 Function.prototype 作为一个由 Object 创建出来的对象，也就是 Function.prototype 的指向 .__proto__
+.3 对象的 \__proto\__ 指向自己原型链上一层，在不加改变情况下上一层的原型链指向 Object.prototype, 构造函数的 prototype 的 constructor 指向构造函数
 
 ```js
 
@@ -33,6 +34,8 @@ new Array().__proto__.constructor === Array // true
 
 ## 原型链继承
 
+### 原型
+原型与构造函数相辅相成，原型储存在狗在函数 prototype 属性所引用的对象
 
 ## VO AO
 
@@ -108,13 +111,16 @@ function createComparisonFunction(propertyName) {
 var compare = createComparisonFunction("name");
 var result = compare({ name: "Nicholas" }, { name: "Greg" });
 
-
 ```
 
-![closure](./imgs/closure.jpg)
-
+![closure](imgs/closure.jpg)
 
 注意: v8优化之后已经尝试开始回收包所占用的内存了
+
+
+## FAQ
+- super() 执行过程
+- 构造函数不写 return 会隐式 return, 如果 return 对象new 出来的对象将不符合正常预期
 
 
 ## Userful links
