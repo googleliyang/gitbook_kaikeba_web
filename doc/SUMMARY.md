@@ -27,3 +27,4 @@
   * [sourcemap](FAQ_LINE/source_map.md)
   * [js_art_skill](FAQ_LINE/js_art_skill.md)
   * [improve logic](FAQ_LINE/Improve_logic.md)
+  * [computer byte exec origin](FAQ_LINE/byte_computer_exec_origin.md)
