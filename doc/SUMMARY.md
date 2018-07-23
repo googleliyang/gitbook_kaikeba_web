@@ -1,7 +1,7 @@
 # Summary
 ​
 ​
-* [1_html5_foundation_fileReader](day1_html5_foundation.md)
+* [1_html5_foundation_filereader](day1_html5_foundation.md)
     
 ​
 * [2_html5_canvas_location](day2_html5_canvas_location.md)
