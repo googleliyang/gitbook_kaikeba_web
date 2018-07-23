@@ -23,7 +23,7 @@
 * [7_js_design_animation](day7_js_design_animation.md)
 
 ​
-* [8_jquery_source_animation](day8_jquery_source_animation.md)
+* [8_jquery_source_animation_regex](day8_jquery_source_animation_regex.md)
 
 ​
 * [9_php_server](day9_php_server.md)
