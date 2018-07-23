@@ -148,6 +148,9 @@ var r = new RegExp('a', {修饰符})
 - (?:abc) 只匹配 abc 不会有分组结果
 
 ### 正则表达式的方法
+test return  true || false
+exec return  string of match
+
 ```js
 // 1
 test('string') // 这个字符串是符合 前边正则 test， 返回 true | false
