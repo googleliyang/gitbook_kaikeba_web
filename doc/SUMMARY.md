@@ -21,7 +21,7 @@
 ​
 * [10_http_sql](day10_http_sql.md)
 
-* [11_php_sql_session_cookie](day11_php_mysql_cookie_sesssion.md)
+* [11_php_sql_session_cookie](day11_php_mysql_cookie_session.md)
 
 * [Time line](tLine.md)
 ​
