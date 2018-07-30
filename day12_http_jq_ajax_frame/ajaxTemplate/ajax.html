@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="ajax.js"></script>
+</head>
+<body>
+
+    <input type="button" value="ajax 封装">
+    <script>
+            document.querySelector("input").onclick=function(){
+                    $.ajax({
+                         url:"ajax.php",
+                         type:"post",
+                          //第一种格式
+                         // data:"username=zhanggsan",
+                         //第二种 格式
+                         data:{
+                              username:"zhangsan",
+                              age:11
+                         },
+                         //数据返回成功的时候调用。
+                         success:function(data){
+                                console.log("响应成功的时候调用");
+                         },
+                         //请求发送之前调用.
+                         beforeSend:function(){
+                                //一般我们是要在这里进行数据校验.
+                                 console.log("请求发送之前时候调用");
+                         },
+                        // 请求完成的时候调用
+                         complete:function(){
+                                console.log("请求完成的时候调用");
+                         },
+                         //请求失败的时候调用
+                         error:function(){
+                                console.log("请求失败的 时候调用");
+                         }
+                    });
+            }
+    </script>
+</body>
+</html>

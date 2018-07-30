@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button" value="ajax 请求异步交互">
+    <div></div>
+    <script>
+             document.querySelector("input").onclick=function(){
+
+                    //XMLHttpRequest
+
+                    //1:创建对象
+                    var xhr=new XMLHttpRequest();
+                    //2:打开连接
+                    xhr.open("get","01ajax.php");
+                    //3:发送数据
+                    xhr.send(null);
+                    //4:接收数据
+                    xhr.onreadystatechange=function(){
+                           //获取到一个状态吗 0,1,2,3,4 //代表响应完成.
+                        //4 响应完成，但是并不代表响应成功
+                           if(xhr.readyState==4 && xhr.status==200 || xhr.status==304){
+                                  //接收数据
+                                  var data=xhr.responseText;
+                                  document.querySelector("div").innerHTML=data;
+                           }
+                    }
+             }
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    用户名:<input type="text" name="username" id="username"> <span></span>
+
+    <script>
+        document.querySelector("input").onblur=function(){
+               var username=document.getElementById("username").value;
+
+
+                var xhr=new XMLHttpRequest();
+                xhr.open("post","03checkuser.php");
+                //post 提交需要向服务器设置一个特殊的请求头.
+                xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+
+                xhr.send("username="+username);
+                xhr.onreadystatechange=function(){
+                    if(xhr.readyState==4 && xhr.status==200 || xhr.status==304){
+                        var data=xhr.responseText;
+                        document.querySelector("span").innerHTML=data;
+                    }
+                }
+
+        }
+    </script>
+
+</body>
+</html>

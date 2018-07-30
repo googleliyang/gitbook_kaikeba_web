@@ -23,6 +23,10 @@
 
 * [11_php_sql_session_cookie](day11_php_sql_cookie_session.md)
 
+* [12_http_jq_ajax_frame](day12_http_jq_ajax_frame.md)
+
+* [13_xml_json_template](day13_xml_json_template.md)
+
 * [Time line](tLine.md)
 ​
 * [FAQ_LINE](FAQ_LINE/README.md)

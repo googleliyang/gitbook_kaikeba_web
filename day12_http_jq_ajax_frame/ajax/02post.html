@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button" value="post 请求异步交互">
+    <div></div>
+    <script>
+             document.querySelector("input").onclick=function(){
+
+                    var xhr=new XMLHttpRequest();
+                    xhr.open("post","02post.php");
+                    //post 提交需要向服务器设置一个特殊的请求头.
+                    xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+                    xhr.send("username=zhangsan&age=11");
+                    xhr.onreadystatechange=function(){
+                           if(xhr.readyState==4 && xhr.status==200 || xhr.status==304){
+                                    var data=xhr.responseText;
+                               console.log(data);
+                           }
+                    }
+             }
+
+
+    </script>
+
+</body>
+</html>
