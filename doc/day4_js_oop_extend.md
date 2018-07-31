@@ -28,9 +28,11 @@ var car = {
 console.log(`小汽车行驶完 ${road.length} 路需要 ${car.calTime(road)} 时间`)
 ```
 
-
-
 ## JS Extend
+### 概念
+继承是使一个对象具有访问另一个对象的能力
+
+
 
 ### 原型继承
 
