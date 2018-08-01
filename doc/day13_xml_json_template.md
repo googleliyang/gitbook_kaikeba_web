@@ -1,9 +1,18 @@
 This class for xml, json parse, js template .
 
+
 ## ajax
 ### ajax 请求参数封装
 
-###
+### eval JSON.parse 解析
+
+- 早期的时候 使用 eval 进行数据解析
+```js
+let res = eval("("+data+")")
+```
+- 现在使用 JSON 对象方法进行解析
+
+### 服务器返回 json 数据时，响应头要设置为 json 格式数据
 
 
 
@@ -14,6 +23,7 @@ This class for xml, json parse, js template .
 - php get content url 可以直接解析地址
 - 服务器返回 xml 打印出来 是 dom 对象
 - vue 等框架让 标签可以写逻辑
+- google有一款非常高效的数据传输格式框架ProtoBuffer
 
 
 
@@ -21,3 +31,4 @@ This class for xml, json parse, js template .
 - webservice 架构上用的多
 - gogle 轻量级数据传输格式
 - bootstrap 使用模块定制
+- websocket 100 个用户在线 100个 socket连接?

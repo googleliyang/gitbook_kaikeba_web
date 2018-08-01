@@ -1,5 +1,7 @@
 This class for cookie, http only, path, domain, as jquery build ajax framework that finish 80% jquery ajax func .
 
+# 麦克风问题，延迟了 一个小时
+
 ## httponly, domain, path
 
 - path
