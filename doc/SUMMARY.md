@@ -27,6 +27,8 @@
 
 * [13_xml_json_template](day13_xml_json_template.md)
 
+* [day14_cors_xhr2_formdata](day14_cors_xhr2_formdata.md)
+
 * [Time line](tLine.md)
 ​
 * [FAQ_LINE](FAQ_LINE/README.md)
