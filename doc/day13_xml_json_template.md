@@ -14,9 +14,20 @@ let res = eval("("+data+")")
 
 ### 服务器返回 json 数据时，响应头要设置为 json 格式数据
 
+## 前端模板
+**BaiduTemplate**：http://tangram.baidu.com/BaiduTemplate/  b百度
 
+**ArtTemplate：**https://github.com/aui/artTemplate  t腾讯
 
-### 小点
+**velocity.js**：https://github.com/shepherdwind/velocity.js/ 阿里
+
+**Handlebars：**http://handlebarsjs.com/
+
+**参考资料:**
+
+http://blog.jobbole.com/56689/
+
+## 小点
 - 早期web service 用的都是 xml, 现在由于解析复杂，体积较大用的较少了
 - xml 早期用在 服务器配置，可扩展标记语言
 - 12306 13 年上线，上亿开发
