@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.bootcss.com/d3/4.13.0/d3.js"></script>
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+     (() =>{
+
+        /**
+         * d3 生成柱状图， 参考笔记
+         */
+        let data = [11, 22, 33, 55, 66]
+        let padding = {
+          left:　20,
+          top: 20,
+          botoom: 20
+        }
+        let width = 400
+        let height = 600
+        let svg = d3.select('body').append('svg')
+                    .attr('width', width)
+                    .attr('height', height)
+        // 生成刻度 - x
+        let xScale = d3.scaleBand().domain(['人工智能', '区块连', '移动互联网', '互联网', '传统软件提供商']).rangeRound([0, width])
+        // 创建坐标 - x
+        let xAxis = d3.axisBottom(xScale)
+        // 生成刻度 -ｙ
+        let yScale = d3.scaleLinear().domain([0, d3.max(data)]).range([height, 0])
+        // 创建坐标 - y
+        var yAxis = d3.axisLeft(yScale)
+        // 把 x 轴 y 轴 添加到 svg 元素
+        svg.append('g')
+           .attr('transform', 'translate(20, 380)')
+           .call(xAxis)
+        svg.append('g')
+            .attr('transform', 'translate(20, -220)')
+            .call(yAxis)
+
+        svg.select('react').data(data)
+           .enter()
+           .append('react')
+           .attr('fill', 'orange')
+           .attr('width', xScale.step())
+           .attr('height', h => {
+              return 200
+           })
+           .attr('x', (h, i) =>　i * xScale.step())
+
+     })()
+
+  </script>
+</body>
+</html>

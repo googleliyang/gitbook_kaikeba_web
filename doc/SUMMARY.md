@@ -24,4 +24,3 @@
   * [postcss stylus sass](faq_line/postcss_stylus_sass.md)
   * [移动端适配](faq_line/yi-dong-duan-bu-ju-fang-an.md)
   * [vue 模块](faq_line/vue.md)
-

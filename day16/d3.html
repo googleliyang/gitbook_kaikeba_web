@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.bootcss.com/d3/4.13.0/d3.js"></script>
+  <title>Document</title>
+</head>
+<body>
+
+
+  <script>
+
+    let data = [21, 22, 11, 35, 78]
+    d3.select('body').append('svg')
+      .attr('width', 400)
+      .attr('height', 400)
+      .attr('fill', 'red')
+      .selectAll('svg')
+      .data(data)
+      .enter()
+      // from data length
+      .append('rect')
+
+  </script>
+</body>
+</html>
