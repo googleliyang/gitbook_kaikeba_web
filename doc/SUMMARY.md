@@ -1,41 +1,27 @@
-# Summary ​
-​
-* [1_html5_foundation_filereader](day1_html5_foundation.md)
-​
-* [2_html5_canvas_location](day2_html5_canvas_location.md)
-​
-* [3_css3_animation_transform_bg...](day3_css3.md)
-​
-* [4_js_oop_extend](day4_js_oop_extend.md)
-​
-* [5_prototype_ao_eo](day5_prototype_ao_eo.md)
-​
-* [6_closure_ad_func](day6_closure_ad_func.md)
-​
-* [7_js_design_animation](day7_js_design_animation.md)
-​
-* [8_jquery_source_animation_regex](day8_jquery_source_animation_regex.md)
+# Table of contents
 
-​
-* [9_php_server](day9_php_server.md)
-​
-* [10_http_sql](day10_http_sql.md)
+* [Introduction](README.md)
+* [1\_html5\_foundation\_filereader](day1_html5_foundation.md)
+* [2\_html5\_canvas\_location](day2_html5_canvas_location.md)
+* [3\_css3\_animation\_transform\_bg...](day3_css3.md)
+* [4\_js\_oop\_extend](day4_js_oop_extend.md)
+* [5\_prototype\_ao\_eo](day5_prototype_ao_eo.md)
+* [6\_closure\_ad\_func](day6_closure_ad_func.md)
+* [7\_js\_design\_animation](day7_js_design_animation.md)
+* [8\_jquery\_source\_animation\_regex](day8_jquery_source_animation_regex.md)
+* [9\_php\_server](day9_php_server.md)
+* [10\_http\_sql](day10_http_sql.md)
+* [11\_php\_sql\_session\_cookie](day11_php_sql_cookie_session.md)
+* [12\_http\_jq\_ajax\_frame](day12_http_jq_ajax_frame.md)
+* [13\_xml\_json\_template](day13_xml_json_template.md)
+* [14\_cors\_xhr2\_formdata](day14_cors_xhr2_formdata.md)
+* [Time line](tline.md)
+* [FAQ\_LINE](faq_line/README.md)
+  * [sourcemap](faq_line/source_map.md)
+  * [js\_art\_skill](faq_line/js_art_skill.md)
+  * [improve logic](faq_line/improve_logic.md)
+  * [computer byte exec origin](faq_line/byte_computer_exec_origin.md)
+  * [postcss stylus sass](faq_line/postcss_stylus_sass.md)
+  * [移动端适配](faq_line/yi-dong-duan-bu-ju-fang-an.md)
+  * [vue 模块](faq_line/vue.md)
 
-* [11_php_sql_session_cookie](day11_php_sql_cookie_session.md)
-
-* [12_http_jq_ajax_frame](day12_http_jq_ajax_frame.md)
-
-* [13_xml_json_template](day13_xml_json_template.md)
-
-* [14_cors_xhr2_formdata](day14_cors_xhr2_formdata.md)
-
-* [Time line](tLine.md)
-​
-* [FAQ_LINE](FAQ_LINE/README.md)
-  * [sourcemap](FAQ_LINE/source_map.md)
-  * [js_art_skill](FAQ_LINE/js_art_skill.md)
-  * [improve logic](FAQ_LINE/Improve_logic.md)
-  * [computer byte exec origin](FAQ_LINE/byte_computer_exec_origin.md)
-  * [postcss stylus sass](FAQ_LINE/postcss_stylus_sass.md)
-  * [移动端适配](FAQ_LINE/移动端布局方案.md)
-  * [vue 模块](FAQ_LINE/vue.md)

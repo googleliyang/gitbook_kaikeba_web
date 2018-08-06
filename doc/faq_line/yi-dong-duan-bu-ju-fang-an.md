@@ -1,10 +1,10 @@
-
+# 移动端适配
 
 ## 宽高比容器
 
-https://codepen.io/googleliyang/pen/KBWBvM
+[https://codepen.io/googleliyang/pen/KBWBvM](https://codepen.io/googleliyang/pen/KBWBvM)
 
-```html
+```markup
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,8 +49,9 @@ https://codepen.io/googleliyang/pen/KBWBvM
 </main>
 </body>
 </html>
-
 ```
 
-## REFER  
-https://mobilesite.github.io/2018/02/05/vm-mobile-layout/
+## REFER
+
+[https://mobilesite.github.io/2018/02/05/vm-mobile-layout/](https://mobilesite.github.io/2018/02/05/vm-mobile-layout/)
+

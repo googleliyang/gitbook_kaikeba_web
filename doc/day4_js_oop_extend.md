@@ -1,3 +1,5 @@
+# 4\_js\_oop\_extend
+
 This class contains oop, extend
 
 ## Js OOP
@@ -5,7 +7,8 @@ This class contains oop, extend
 ### 实例
 
 一辆小汽车，80km/s 速度行驶，多久行驶完 一条 800km 的道路
-```js
+
+```javascript
 // 普通写法
 let res = 800 / 80
 
@@ -29,10 +32,10 @@ console.log(`小汽车行驶完 ${road.length} 路需要 ${car.calTime(road)} �
 ```
 
 ## JS Extend
+
 ### 概念
+
 继承是使一个对象具有访问另一个对象的能力
-
-
 
 ### 原型继承
 
@@ -41,3 +44,4 @@ console.log(`小汽车行驶完 ${road.length} 路需要 ${car.calTime(road)} �
 ### 组合继承
 
 ### Extend 方法
+
