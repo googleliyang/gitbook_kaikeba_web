@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./jquery-3.2.1.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <input type="file" name="picture" id="picture" accept="image/*"><br>
+</body>
+    <script type="text/javascript" >
+        $(function () {
+            document.getElementById("picture").onchange=function(){
+                var file = this.files[0];
+                var formData = new FormData();
+                var me = this;
+                formData.append('file',file);
+                $.ajax({
+                    url:"upload.php?action=file",
+                    method:"post",
+                    async:true,
+                    data:formData,
+                    processData: false,
+                    contentType: false,
+                    success:function(data){
+                        var jsonData = JSON.parse(data);
+                        if(jsonData.code==200){
+                            alert("上传成功");
+                            var img = document.createElement("img");
+                            img.src=jsonData.filePath;
+                            img.style="width:30%";
+                            me.parentNode.appendChild(img);
+                        }
+                    },
+                    error:function(){
+                        alert("error");
+                    }
+                })
+            }
+        });
+    </script>
+</html>
