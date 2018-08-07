@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta content="email=no" name="format-detection"/>
+    <title>讲师列表</title>
+    <link rel="stylesheet" href="public/css/common.css">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/assets/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="public/assets/mescroll/mescroll.min.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h4>讲师列表</h4>
+        </header>
+        <div id="mescroll" class="mescroll">
+            <ul id="teacherList" class="list-group">
+
+            </ul>
+        </div>
+    </div>
+    <script src="public/assets/zepto/dist/zepto.js"></script>
+    <!--
+    如果用手指一直按住一个弹簧，它将不会弹起直到你松手为止。
+也就是说当调用动作n毫秒后，才会执行该动作，若在这n毫秒内又调用此动作则将重新计算执行时间-->
+    <script src="public/js/lodash.js"></script>
+    <script src="public/assets/mescroll/mescroll.min.js"></script>
+    <script>
+        (function (document, $) {
+            var page = 1,
+                mescroll = new MeScroll("body", {
+                    //第一个参数"mescroll"对应上面布局结构div的id
+                    //如果您的下拉刷新是重置列表数据,那么down完全可以不用配置,具体用法参考第一个基础案例
+                    //解析: down.callback默认调用mescroll.resetUpScroll(),而resetUpScroll会将page.num=1,再触发up.callback
+                    down: {
+                        callback: downCallback //下拉刷新的回调,别写成downCallback(),多了括号就自动执行方法了
+                    },
+                    up: {
+                        // _.debounce 是一个通过 lodash 限制操作频率的函数
+                        callback: _.debounce(upCallback, 300), //上拉加载的回调
+                        isBounce: false //如果您的项目是在iOS的微信,QQ,Safari等浏览器访问的,建议配置此项.解析(必读)
+                    }
+                });
+            function downCallback() {
+                page = 1;
+                $("#teacherList").html("");
+                mescroll.endSuccess(); //无参
+                mescroll.resetUpScroll();
+            }
+            function upCallback() {
+                $.post("api/controllers/teacherList.php", {page: page}, function (data) {
+                    data = JSON.parse(data);
+                    if(data.status === 0){
+                        mescroll.endSuccess(10, page < data.totalPages);
+                        var html = [];
+                        data.list.forEach(function (value) {
+                            html.push(["<li class='list-group-item'>",
+                                "<div class='list-item-img'><img src='", value.img,"'></div>",
+                                "<div class='list-item-info'>",
+                                    "姓名：", value.name,
+                                    "<br>年龄：", value.age,
+                                    "<br>爱好：", value.hobbies,
+                                "</div>",
+                                "</li>"].join(""));
+                        });
+                        $("#teacherList").append(html.join(""));
+                        page++;
+                    }else{
+                        mescroll.endErr();
+                    }
+                });
+            }
+        })(document, $);
+    </script>
+</body>
+</html>

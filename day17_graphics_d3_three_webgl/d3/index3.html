@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/d3.js"></script>
+</head>
+<body>
+    <div id="chart" >
+
+    </div>
+    <script>
+           //1:准备数据
+           var data = [11,22,33,55,36];
+           var width = 400,height = 400;
+           var padding = {
+                left:20,
+                top:20,
+                bottom:20
+           }
+           //2:创建svg 的标签
+           var svg = d3.select("body").append("svg").attr("width",width).attr("height",height);
+           //3：创建坐标系
+           //3.1 创建x 轴的坐标
+           //生成刻度
+           var xScale = d3.scaleBand().domain(["人工智能","区块链","移动端互联网","互联网","传统软件提供商"]).rangeRound([0,width-padding.left]);
+           //创建x 轴 的坐标
+           var xAxis = d3.axisBottom(xScale);
+           //3.2 创建y 轴的坐标
+           var yScale = d3.scaleLinear().domain([0,d3.max(data)]).range([height-padding.bottom-padding.top,0]);
+           //y 轴的坐标的位置
+           var yAxis =d3.axisLeft(yScale);
+           //4: 把x 轴 以及y 轴添加到 svg 元素里面去.
+
+           //添加x 轴到 svg 元素上面.
+           svg.append("g")
+                   .attr("transform","translate("+padding.left+","+(height-padding.bottom)+")")
+                   .call(xAxis);
+           //添加y 轴到 svg 元素上面.
+           svg.append("g")
+                   .attr("transform","translate(20,"+padding.top+")")
+                   .call(yAxis);
+
+           //5：开始往svg当中去填充数据.
+           //根据数据去填充矩形.
+           svg.selectAll("rect").data(data).enter().append("rect")
+                   .attr("fill","pink")
+                   //根据x 轴的长度分为多少等份.
+                   .attr("width",xScale.step()-10)
+                   .attr("transform","translate("+padding.left+","+padding.top+")")
+                   .attr("height",function(h){
+                        //返回每个元素在y 上面对应的一个高度.
+                        return height-padding.top-padding.bottom-yScale(h);
+                   })
+                   /*
+                   * i 对应的是  [11,22,33,55,36] 数据元素的索引值.
+                   * */
+                   .attr("x",function(h,i){
+                        return  i*xScale.step()+5;
+                   })
+                   .attr("y",function(h,i){
+                        //根据这个比例尺返回剩余的一个高度
+                        return yScale(h);
+                   });
+    </script>
+</body>
+</html>

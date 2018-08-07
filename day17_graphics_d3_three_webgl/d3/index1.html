@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/d3.js"></script>
+</head>
+<body>
+    <h3>d3 是一个专门用来操作svg 的库</h3>
+
+    <script>
+          d3.select("h3").style("color","red");
+          d3.select("body").append("button").text("这个是一个按钮").style("color","blue");
+
+          d3.select("button").on("click",function(){
+                 alert("事件");
+          });
+          //d3 可以用来操作页面上面的元素，就像jquery 一样去使用
+          //但是它的主要任务，主要是操作svg 元素，然后去绘制图形.
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>立方体</title>
+    <script src="js/three.js"></script>
+    <!--借助插件去控制相机.-->
+    <script src="js/OrbitControls.js"></script>
+    <style>
+          *{
+               margin: 0;
+               padding: 0;
+          }
+    </style>
+</head>
+<body>
+    <script>
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            /*
+            *1:需要有一个舞台
+             2:准备一个摄像机
+             3:舞台上面需要有演员
+             4:创建演员，演员准备各种各样动作
+             5:创建演员，实际就是一个立方体，可以对立方体进行包装.
+             6：使用canvas 对设想的结果进行一个展示.
+            * */
+            //1:创建舞台
+            var scene = new THREE.Scene();
+
+            //2:准备摄像机
+            /*
+            * 1: 摄像机的角度,角度越大，设想范围就越广
+            * 2: 舞台的宽度以及高度比例.
+            * 3: 调整摄像机 可以设想区域的一个范围
+            * */
+            var camera = new THREE.PerspectiveCamera(50,width/height,0.1,800);
+
+            //2.1 控制相机的位置
+            camera.position.x=0;
+            camera.position.y=0;
+            camera.position.z=20;
+
+            //2.2 摄像机对准舞台.
+            camera.lookAt(scene.position);
+
+            //3：开始进行录制.我们要把这个录制的结果展示到页面上面,我们要对结果进行渲染
+            var renderer = new THREE.WebGLRenderer();
+
+            //设置canvas大小
+            renderer.setSize(width-100,height-100);
+
+            //把这个渲染器放在页面上面去.
+            document.body.appendChild(renderer.domElement);
+
+            //控制相机，让相机可以随着我的随表的滚动而滚动，可以进行缩放.
+            var orbitControl = new THREE.OrbitControls(camera);
+            //控制它的旋转
+            orbitControl.autoRotate = true;
+            //准备演员（几何体（盒子，图片，视频））
+            var box = new THREE.BoxGeometry(4,4,4);
+            //修饰这个立方体，给这个立方体画个妆，给每个面俩个颜色.
+            var materials = [
+                new THREE.MeshBasicMaterial({"color":"red"}),
+                new THREE.MeshBasicMaterial({"color":"green"}),
+                new THREE.MeshBasicMaterial({"color":"pink"}),
+                new THREE.MeshBasicMaterial({"color":"yellow"}),
+                new THREE.MeshBasicMaterial({"color":"blue"}),
+                new THREE.MeshBasicMaterial({"color":"yellowgreen"})
+            ];
+            //将演员box 通过 材料 materials  去进行修饰.
+            var cube = new THREE.Mesh(box,materials);
+
+            cube.rotation.x=0.4;
+            cube.rotation.y=0.7;
+            cube.rotation.z=0.6;
+//            //我要把演员搬到舞台上面去.
+            scene.add(cube);
+//            //渲染舞台到照相机.
+//            renderer.render(scene,camera);
+            //想让这个盒子去执行动画.
+
+             render();
+             function render() {
+                 cube.rotation.x+=0.02;
+                 cube.rotation.y+=0.03;
+                 cube.rotation.z+=0.04;
+                 renderer.render(scene,camera);
+                 //递归. 一秒钟会执行60次
+                 requestAnimationFrame(render);
+             }
+
+    </script>
+</body>
+</html>
