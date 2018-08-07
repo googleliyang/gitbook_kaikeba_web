@@ -9,7 +9,7 @@ This class for simple demo, include pagination, bootstrap table plugin, jp fileu
 
 ## formdata
 
-## point
+## tip
 
 ## FAQ
 

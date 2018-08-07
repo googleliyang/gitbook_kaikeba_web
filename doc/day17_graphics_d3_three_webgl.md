@@ -56,6 +56,9 @@ webgl 借助 canvas 绘制 3d 图形, three.js 为 webgl 框架,
 WebGL (2D的canvas 我们叫做canvas，3d 的canvas 我们叫做webGL,three.js 是一个用来操作canval 的webGL 库)
 
 ### webgl 绘制
+
+![step webgl](imgs/17/three_render.jpg)
+
 ```
 在WebGL 当中
 需要有一个“舞台”来放置元素
@@ -66,14 +69,13 @@ WebGL (2D的canvas 我们叫做canvas，3d 的canvas 我们叫做webGL,three.js 
 再次对几何体进行 “包装”
 通过 canvas 标签来对“摄像结果”进行展示
 
- <!--
-            1:需要有一个舞台
-            2:准备一个摄像机
-            3:舞台上面需要有演员
-            4:创建演员，演员准备各种各样动作
-            5:创建演员，实际就是一个立方体，可以对立方体进行包装.
-            6：使用canvas 对设想的结果进行一个展示.
--->
+  1:需要有一个舞台
+  2:准备一个摄像机
+  3:舞台上面需要有演员
+  4:创建演员，演员准备各种各样动作
+  5:创建演员，实际就是一个立方体，可以对立方体进行包装.
+  6：使用canvas 对设想的结果进行一个展示.
+
 ```
 
 
@@ -121,7 +123,7 @@ svg 标签内画 各种形状标签, svg 画矩形圆如下
 ## FAQ
 
 - + [x] 930 rest 10 re listen
-- + [x] ２２：３５　－＞ end　
+- + [x] 22:35 to　end　
 - + [x] 22:02 - 22: 06 re listen
 - webscoket 时时 渲染 图形
 - requestAnimationFrame
