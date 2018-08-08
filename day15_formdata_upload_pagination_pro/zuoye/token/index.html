@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		table{border: 1px solid #ccc;padding: 5px;text-align: center;width: 100%}
+		table tr{border-bottom: 1px solid #ccc;display: flex}
+		table tr th{flex: 1}
+		table tbody{text-align: center;margin: auto};
+	</style>
+</head>
+<body>
+	<div>
+		<table id="personTable">
+			<thead>
+				<tr>
+					<th>人员编码</th>
+					<th>人员姓名</th>
+					<th>出生年份</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody id="personList">
+				
+			</tbody>
+		</table>
+		<br>
+		<button id="insert">新增人员</button>
+	</div>
+</body>
+<script type="text/javascript">
+	function getQueryString(url,name){
+		var result='';
+		if(url&&url.indexOf(name)!=-1){
+			var reg = new RegExp("(^|&)"+name+"=([^&]*)(&|$)","i");
+			var r = url.match(reg);
+			if(r!=null){
+				result=unescape(r[2]);
+			}
+		}
+		return result;
+	}
+	window.onload=function(){
+		var urlAddr = window.location.href.split("/");
+		var queryString= urlAddr[urlAddr.length-1].split("?")[1];
+		var token = getQueryString(queryString,"token")||localStorage.getItem("token");
+		localStorage.setItem("token",token);
+
+		var xhr;
+		if(window.XMLHttpRequest){
+			xhr = new XMLHttpRequest();
+		}else{
+			xhr = new ActiveXObject('Microsoft.XMLHTTP');
+		}
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState == 4){
+				if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+                	//实际操作
+                	var datas = JSON.parse(decodeURIComponent(xhr.responseText));
+                		if(datas.state=='0'){
+                			alert(datas.Msg);
+                			location.href="./login.html";
+                		}
+                	if(datas.length>0){
+                		var html = '';
+                		for(var i=0;i<datas.length;i++){
+                			var data = datas[i];
+                			html += '<tr>'+
+	                			'<td style="flex:1">'+data.pid+'</td>'+
+	                			'<td style="flex:1">'+data.pname+'</td>'+
+	                			'<td style="flex:1">'+data.birthYear+'</td>'+
+	                			'<td style="flex:1"><a href="update.html?pid='+data.pid+'&token='+token+'">修改</a>&ensp;'+
+	                			'<a href="sql.php?action=delete&pid='+data.pid+'&token='+token+'">删除</a></td>'+
+	                			'</tr>';
+                		}
+                		document.getElementById('personList').innerHTML = html;
+                	}else{
+                		document.getElementById('personList').innerHTML = '暂无记录';
+                	}
+                }
+                else{
+                	alert(xhr.status+"："+xhr.statusText);
+                }
+       	 	}
+    	}
+		xhr.open('GET','sql.php?action=show&token='+token,true);
+		xhr.send();
+	}
+	var insert = document.getElementById('insert');
+	insert.onclick=function(){
+		location.href="./insert.html";
+	}
+</script>
+</html>

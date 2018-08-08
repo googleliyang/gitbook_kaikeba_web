@@ -1,0 +1,18 @@
+{
+  "url": {
+    "message": "url无效",
+    "validators": {
+      "notEmpty": {
+        "message": "url不能为空"
+      }
+    }
+  },
+  "canshu": {
+    "message": "参数无效",
+    "validators": {
+      "notEmpty": {
+        "message": "参数不能为空"
+      }
+    }
+  }
+}

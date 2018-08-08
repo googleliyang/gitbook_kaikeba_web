@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<div style="margin: 10px">
+		<form method="post" id="form">
+			<label>姓名：</label>
+			<input type="text" name="pname">
+			<br><br>
+			<label>出生年份：</label>
+			<input type="number" name="birthYear" min="1900" max="2099" value="2018">
+			<br><br>
+			<input type="submit" id="insert" value="插入">
+		</form>
+	</div>
+	<script type="text/javascript">
+		document.getElementById("insert").onclick=function(){
+			var form = document.getElementById("form");
+			form.action="sql.php?action=insert&token="+localStorage.getItem("token");
+			form.submit();
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<div style="margin: 10px">
+		<form method="post" action="sql.php?action=edit">
+			<label>编号：</label>
+			<input type="text" name="pid" id="pid" readonly="readonly">
+			<br><br>
+			<label>姓名：</label>
+			<input type="text" name="pname" id="pname">
+			<br><br>
+			<label>出生年份：</label>
+			<input type="number" name="birthYear" min="1900" max="2099" value="2018" id="birthYear">
+			<br><br>
+			<input type="submit" value="修改">
+		</form>
+	</div>
+</body>
+<script type="text/javascript">
+	window.onload=function(){
+		var urlArr = location.href.split('?');
+		var param = urlArr[1];
+		var xhr;
+		if(window.XMLHttpRequest){
+			xhr = new XMLHttpRequest();
+		}else{
+			xhr = new ActiveXObject('Microsoft.XMLHTTP');
+		}
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState == 4){
+				if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+                	//实际操作
+                	var datas = JSON.parse(decodeURIComponent(xhr.responseText));
+                	if(datas.length>0){
+                		document.getElementById('pid').value=datas[0].pid;
+                		document.getElementById('pname').value=datas[0].pname;
+                		document.getElementById('birthYear').value=datas[0].birthYear;
+                	}
+                }
+                else{
+                	alert(xhr.status+"："+xhr.statusText);
+                }
+       	 	}
+    	}
+    	xhr.open('GET','sql.php?action=select&'+param+'&token='+localStorage.getItem("token"),true);
+		xhr.send();
+	}
+</script>
+</html>

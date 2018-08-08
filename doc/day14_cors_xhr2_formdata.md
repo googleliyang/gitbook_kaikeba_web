@@ -102,6 +102,8 @@ seo 关键词搜索排名 & 手机app 搜索排名，有一些逆向手段，刷
 
 ![token](.gitbook/assets/h_token.png)
 
+![day15_still_token](imgs/day14/day15_still_token.png)
+
 ## ajax 文件上传
 
 * ajax 使用 formdata 进行文件数据以及form表单其他数据， 自定义数据\(appendData\) 提交
@@ -170,4 +172,3 @@ pc 端补一个瀑布流 ![pro](.gitbook/assets/pro.png)
 
 
 ### get some data by spider
-
