@@ -86,7 +86,7 @@ jsonp 方式为较早的跨域解决方案，使用时候只支持 "get" 请求�
 
 和上一种方式基本类似，通常运维进行配置，如同 nginx 负载，转发服务器，需要 "高载宽，高响应速度\(cpu 处理速度\)"
 
-![req\_forward](.gitbook/assets/req_forward.png)
+![req\_forward](.gitbook/assets/req_forward%20%281%29.png)
 
 ## SEO & ISO
 
@@ -96,13 +96,13 @@ seo 关键词搜索排名 & 手机app 搜索排名，有一些逆向手段，刷
 
 ### 基于 session 方式
 
-![session](.gitbook/assets/h1.png)
+![session](.gitbook/assets/h1%20%281%29.png)
 
 ### 基于 token 方式
 
 ![token](.gitbook/assets/h_token.png)
 
-![day15_still_token](imgs/day14/day15_still_token.png)
+![day15\_still\_token](.gitbook/assets/day15_still_token.png)
 
 ## ajax 文件上传
 
@@ -128,7 +128,7 @@ var formData=new FormData(document.getElementById("formDataId"));
 
 * 两个域名解析到 同一个服务器，根据域名不同，区分目录共用 80 端口
 
-![vhosts](.gitbook/assets/vhost.png) 因为服务启动地址为 127.0.0.1
+![vhosts](.gitbook/assets/vhost%20%281%29.png) 因为服务启动地址为 127.0.0.1
 
 客户端 vhosts 文件中配置，127.0.0.1 www.tianmao.com
 
@@ -146,7 +146,7 @@ token 安全性更高，兼容性更好, token 也可以做成 心跳\(未失效
 
 ## 案例
 
-pc 端补一个瀑布流 ![pro](.gitbook/assets/pro.png)
+pc 端补一个瀑布流 ![pro](.gitbook/assets/pro%20%281%29.png)
 
 ## 小点
 
@@ -169,6 +169,5 @@ pc 端补一个瀑布流 ![pro](.gitbook/assets/pro.png)
 
 ### token auth front & back
 
-
-
 ### get some data by spider
+
