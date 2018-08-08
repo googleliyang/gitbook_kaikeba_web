@@ -39,9 +39,6 @@ $('#lifePhotoId').fileupload({
 });
 ```
 
-## bootstrap data
-
-## formdata
 
 ## 讲师模块封装
 
@@ -74,7 +71,54 @@ $('#lifePhotoId').fileupload({
 
 ```
 
+https://github.com/googleliyang/kaikeba/blob/master/day15_formdata_upload_pagination_pro/pc/js/index.js
+
 ## pc 端 讲师增删改查+分页 bootstrap+bootstrap.min.js+jquery.fileupload.js
+
+## bootstrap table
+
+```js
+initTable:function(){
+       $("#teacher_infoId").bootstrapTable({
+           pagination: true, //分页
+           sidePagination:"server",
+           //这个函数是有多少行数据就会调用多少次这个函数.
+           rowStyle:function(row,index){
+               //row.lifePhoto  从数据库拿到的图片地址啊.
+               row.lifePhoto="<img width='100' src='"+row.lifePhoto+"'>"
+               return row;
+           },
+           //我们可以通过这个params 想服务器端设置参数.
+           // queryParams:function(params){
+           //     params.pageSize=10;
+           //     params.page=params.offset/params.pageSize+1;
+           //     return params;
+           // },
+           striped:true,
+           //添加一个参数，指定分页的条数,
+           columns:[
+                 {
+                     title:"讲师姓名",
+                     field:'username'
+                 },
+                 {
+                     title:"讲师年龄",
+                     field:'age'
+                 },
+                 {
+                     title:"讲师照片",
+                     field:'lifePhoto'
+                 },
+                 {
+                     title:"讲师描述",
+                     field:'t_desc'
+                 }
+             ],
+           url:"../api/findTeacher.php?currentPage=1&pageSize=10"
+       });
+}
+
+```
 
 ## tip
 
