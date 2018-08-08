@@ -139,8 +139,6 @@ zepto.js 定制的步骤
 8、查看目录dist即构建好的zepto.js
 
 
-## d3
-
 ## FAQ
 
 - [x] 9:05 jquery delegate 事件委派
