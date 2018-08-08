@@ -16,12 +16,11 @@
 * [13\_xml\_json\_template](day13_xml_json_template.md)
 * [14\_cors\_xhr2\_formdata](day14_cors_xhr2_formdata.md)
 
-* [15\_lastday_home work_teacher\_pagination\_bTable_code_framework](day15_formdata_upload_pagination_pro.md)
+* [15\_lastday_homework_teacher\_pagination\_bTable_code_framework](day15_formdata_upload_pagination_pro.md)
 
+* [16\_upload\_bTable\_echarts_zepto](day16_upload_btable_echarts_zepto.md)
 
-*[16\_upload\_bTable\_echarts_zepto](day16_upload_btable_echarts_zepto.md)
-
-*[17\_graphics\_d3\_three\_webgl](day17_graphics_d3_three_webgl.md)
+* [17\_graphics\_d3\_three\_webgl](day17_graphics_d3_three_webgl.md)
 
 * [Time line](tline.md)
 * [FAQ\_LINE](faq_line/README.md)
