@@ -53,9 +53,9 @@ webgl 借助 canvas 绘制 3d 图形, three.js 为 webgl 框架, WebGL \(2D的ca
 
 ### webgl 绘制
 
-![step webgl](imgs/17/three_render.jpg)
+![step webgl](.gitbook/assets/three_render.jpg)
 
-```
+```text
 需要有一个“舞台”来放置元素
 需要有一台“摄像机”记录“舞台”上发生的事情
 舞台上需要有“演员”
@@ -70,7 +70,6 @@ webgl 借助 canvas 绘制 3d 图形, three.js 为 webgl 框架, WebGL \(2D的ca
   4:创建演员，演员准备各种各样动作
   5:创建演员，实际就是一个立方体，可以对立方体进行包装.
   6：使用canvas 对设想的结果进行一个展示.
-
 ```
 
 ## canvas & svg & Animation
@@ -116,13 +115,13 @@ svg 标签内画 各种形状标签, svg 画矩形圆如下
 
 ## FAQ
 
-- + [x] 930 rest 10 re listen
-- + [x] 22:35 to　end　
-- + [x] 22:02 - 22: 06 re listen
-- webscoket 时时 渲染 图形
-- requestAnimationFrame
-- remember base
-- svg 在 html 页面中没有使用 xlmns 命名空间依旧可以工作
+* * [x] 930 rest 10 re listen
+* * [x] 22:35 to　end　
+* * [x] 22:02 - 22: 06 re listen
+* webscoket 时时 渲染 图形
+* requestAnimationFrame
+* remember base
+* svg 在 html 页面中没有使用 xlmns 命名空间依旧可以工作
 
 Refer
 
@@ -149,3 +148,4 @@ preview class
 
 * [x] Preview next class
 * [x] Read teacher current class md
+

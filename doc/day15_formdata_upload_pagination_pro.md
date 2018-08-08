@@ -1,30 +1,30 @@
-This class for simple demo, include pagination, bootstrap table plugin, jp fileupload...
-& php provider api, use formdata upload file async.
+# 15\_lastday\_homework\_teacher\_pagination\_bTable\_code\_framework
+
+This class for simple demo, include pagination, bootstrap table plugin, jp fileupload... & php provider api, use formdata upload file async.
 
 > This class for last homework
 
-| Today    | md | homework |
-| -------- | -------- | ------ |
-| upload  | ✓     | ✓  |
-| pagination | ✓    | ✓  |
-| formdata    | ✓    | ✓    |
-
+| Today | md | homework |
+| :--- | :--- | :--- |
+| upload | ✓ | ✓ |
+| pagination | ✓ | ✓ |
+| formdata | ✓ | ✓ |
 
 由于音效不好，8:45开始讲作业.
 
 作业:
 
-使用 ajax2 去做文件上传 formData+fileReader 去写文件上传.
-pc 端 讲师增删改查+分页
+使用 ajax2 去做文件上传 formData+fileReader 去写文件上传. pc 端 讲师增删改查+分页
 
-https://github.com/aui/artTemplate
+[https://github.com/aui/artTemplate](https://github.com/aui/artTemplate)
 
 bootstrap+bootstrap-table.min.js+jquery.fileupload.js+echarts.js+template-web.js
 
 移动端下拉刷新，滚动加载 mescroll.js
 
 ## fileupload
-```js
+
+```javascript
 <input type="file" id="lifePhotoId" name="lifePhoto" data-url="../api/teacherupload.php">
 $('#lifePhotoId').fileupload({
    dataType: 'json',
@@ -38,7 +38,6 @@ $('#lifePhotoId').fileupload({
    $(".image_area_file div").append("<img src='"+url+"' width='100' height='100'>");   
 });
 ```
-
 
 ## 讲师模块封装
 
@@ -54,8 +53,7 @@ $('#lifePhotoId').fileupload({
 
 > 代码组织方式
 
-```js
-
+```javascript
 (function (dom){
   var huike = {
     config: {
@@ -68,16 +66,15 @@ $('#lifePhotoId').fileupload({
   }  
   huike.init()
 })(docuemnt)
-
 ```
 
-https://github.com/googleliyang/kaikeba/blob/master/day15_formdata_upload_pagination_pro/pc/js/index.js
+{% embed data="{\"url\":\"https://github.com/googleliyang/kaikeba/blob/master/day15\_formdata\_upload\_pagination\_pro/pc/js/index.js\",\"type\":\"link\",\"title\":\"googleliyang/kaikeba\",\"description\":\"Contribute to kaikeba development by creating an account on GitHub.\",\"icon\":{\"type\":\"icon\",\"url\":\"https://github.com/fluidicon.png\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://avatars1.githubusercontent.com/u/24791696?s=400&v=4\",\"width\":231,\"height\":231,\"aspectRatio\":1}}" %}
 
 ## pc 端 讲师增删改查+分页 bootstrap+bootstrap.min.js+jquery.fileupload.js
 
 ## bootstrap table
 
-```js
+```javascript
 initTable:function(){
        $("#teacher_infoId").bootstrapTable({
            pagination: true, //分页
@@ -117,12 +114,11 @@ initTable:function(){
            url:"../api/findTeacher.php?currentPage=1&pageSize=10"
        });
 }
-
 ```
 
 ## tip
 
 ## FAQ
 
-
 ## code by yourself
+

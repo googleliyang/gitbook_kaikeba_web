@@ -8,20 +8,14 @@
 * [5\_prototype\_ao\_eo](day5_prototype_ao_eo.md)
 * [6\_closure\_ad\_func](day6_closure_ad_func.md)
 * [7\_js\_design\_animation](day7_js_design_animation.md)
-*[8\_jquery\_source\_animation\_regex](day8_jquery_source_animation_regex.md)
 * [9\_php\_server](day9_php_server.md)
 * [10\_http\_sql](day10_http_sql.md)
-*[11\_php\_sql\_session\_cookie](day11_php_sql_cookie_session.md)
 * [12\_http\_jq\_ajax\_frame](day12_http_jq_ajax_frame.md)
 * [13\_xml\_json\_template](day13_xml_json_template.md)
 * [14\_cors\_xhr2\_formdata](day14_cors_xhr2_formdata.md)
-
-* [15\_lastday_homework_teacher\_pagination\_bTable_code_framework](day15_formdata_upload_pagination_pro.md)
-
-* [16\_upload\_bTable\_echarts_zepto](day16_upload_btable_echarts_zepto.md)
-
+* [15\_lastday\_homework\_teacher\_pagination\_bTable\_code\_framework](day15_formdata_upload_pagination_pro.md)
+* [16\_upload\_bTable\_echarts\_zepto](day16_upload_btable_echarts_zepto.md)
 * [17\_graphics\_d3\_three\_webgl](day17_graphics_d3_three_webgl.md)
-
 * [Time line](tline.md)
 * [FAQ\_LINE](faq_line/README.md)
   * [sourcemap](faq_line/source_map.md)
@@ -31,3 +25,4 @@
   * [postcss stylus sass](faq_line/postcss_stylus_sass.md)
   * [移动端适配](faq_line/yi-dong-duan-bu-ju-fang-an.md)
   * [vue 模块](faq_line/vue.md)
+
