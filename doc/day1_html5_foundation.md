@@ -4,3 +4,7 @@
 
 * header, nav, , main, article, section, aside, footer, small, mark
 
+https://codepen.io/googleliyang/pen/EpdYEJ
+
+## Tip
+- chrome 在第二次播放时，autoplay 失效
