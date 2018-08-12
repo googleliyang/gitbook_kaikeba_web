@@ -53,7 +53,7 @@ webgl 借助 canvas 绘制 3d 图形, three.js 为 webgl 框架, WebGL \(2D的ca
 
 ### webgl 绘制
 
-![step webgl](.gitbook/assets/three_render.jpg)
+![step webgl](.gitbook/assets/three_render%20%281%29.jpg)
 
 ```text
 需要有一个“舞台”来放置元素
@@ -142,9 +142,12 @@ Refer
 
 * 定制一个柱状图, 刷新每个柱子加一个缓动动画
 
-https://codepen.io/googleliyang/pen/bjmvMm
+
+
+{% embed data="{\"url\":\"https://codepen.io/googleliyang/pen/bjmvMm\",\"type\":\"rich\",\"title\":\"bjmvMm\",\"description\":\"...\",\"icon\":{\"type\":\"icon\",\"url\":\"https://codepen.io/favicons/favicon-192x192.png\",\"width\":192,\"height\":192,\"aspectRatio\":1},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://s3-us-west-2.amazonaws.com/m.cdpn.io/screenshot-coming-soon-small.png\",\"width\":400,\"height\":225,\"aspectRatio\":0.5625},\"embed\":{\"type\":\"app\",\"url\":\"https://codepen.io/googleliyang/embed/preview/bjmvMm?height=300&slug-hash=bjmvMm&default-tabs=js,result&host=https://codepen.io&embed-version=2\",\"html\":\"<iframe src=\\\"https://codepen.io/googleliyang/embed/preview/bjmvMm?height=300&amp;slug-hash=bjmvMm&amp;default-tabs=js,result&amp;host=https://codepen.io&amp;embed-version=2\\\" style=\\\"border: 0; width: 100%; height: 300px;\\\" allowfullscreen></iframe>\",\"height\":300,\"aspectRatio\":null}}" %}
 
 preview class
 
 * [x] Preview next class
 * [x] Read teacher current class md
+
