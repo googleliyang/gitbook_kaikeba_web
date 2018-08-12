@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="./web3.min.js"></script>
+
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+
+  var contract = {
+    address: '0x3737a923b5a409a7a630631e1ae462203f4ed79b',
+    abi: [
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "say",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"name": "_greeting",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	}
+]
+  }
+
+    // personal.unlockAccount(eth.accounts[0]);
+    web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+    // console.log(web3.personal.newAccount("123456"))
+    console.log(web3)
+    console.log('get account', web3.eth.accounts)
+    // web3 call
+
+    var myContract = new web3.eth.Contract(contract.abi, contract.address);
+    myContract.methods.say().call().then(res => {console.log('the contract res is', res)});
+
+    //分析 new web3.eth.Contract(jsonInterface[, address][, options])
+
+
+</script>
+</body>

@@ -1,0 +1,37 @@
+[
+  {
+    "day": "周一",
+    "sales": 42000,
+    "bestSeller": "柠檬汁"
+  },
+  {
+    "day": "周二",
+    "sales": 56000,
+    "bestSeller": "柠檬汁"
+  },
+  {
+    "day": "周三",
+    "sales": 37000,
+    "bestSeller": "山泉水"
+  },
+  {
+    "day": "周四",
+    "sales": 143000,
+    "bestSeller": "冰茶"
+  },
+  {
+    "day": "周五",
+    "sales": 259000,
+    "bestSeller": "冰茶"
+  },
+  {
+    "day": "周六",
+    "sales": 278000,
+    "bestSeller": "柠檬汁"
+  },
+  {
+    "day": "周日",
+    "sales": 270000,
+    "bestSeller": "粉红蜂蜜柠檬汁"
+  }
+]

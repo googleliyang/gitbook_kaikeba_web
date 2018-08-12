@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/d3.js"></script>
+	</head>
+	<body>
+		<div id="chart"></div>
+		
+	</body>
+	<script>
+		//1、准备数据
+		var data=[22,23,35,70,80];
+		var width=400,height=400;
+		var padding={
+			left:20,
+			top:20,
+			bottom:20
+		}
+		var colorList=["pink","green","orange","yellow","blue"]
+		
+		//2、创建svg标签
+		var svg=d3.select("body")
+		.append("svg")
+		.attr("width",width)
+		.attr("height",height);
+		
+		//3、创建坐标
+		//3.1 创建x轴的坐标
+		//生成刻度
+		var xScale=d3.scaleBand().domain(['人工智能',"区块链","移动互联网","互联网","传统软件供应商"])
+		/*按照0-width 的长度生成多少等份*/
+		.rangeRound([0,width-padding.left]);
+		//创建x轴的坐标
+		var xAxis=d3.axisBottom(xScale);
+		//3.2创建y轴的坐标
+		var yScale=d3.scaleLinear().domain([0,d3.max(data)])
+		.range([height-padding.bottom-padding.top,0]);
+		//y轴的坐标位置
+		var yAxis=d3.axisLeft(yScale);
+		
+		//添加x轴到svg元素上面
+		svg.append("g")
+		.attr("transform","translate("+padding.left+","+(height-padding.bottom)+")")
+		.call(xAxis);
+		//添加y轴到svg元素上面
+		svg.append("g")
+		.attr("transform","translate(20,"+padding.top+")")
+		.call(yAxis);
+		
+		//5.开始往svg中填充数据。
+		//根据数据去填充矩形
+		svg.selectAll("rect").data(data).enter().append("rect")
+				//填充每一个具体的柱子对应的颜色。
+		.attr("fill",function(d){
+			var index=Math.floor(Math.random()*colorList.length);
+			var color=colorList[index];
+			colorList.splice(index,1);
+			return color;
+		})
+		//根据x轴的长度分为多少等分
+		.attr("width",xScale.step()-10)
+		.attr("height",function(h){
+			//返回每个元素在y轴上面对应的一个高度
+			return 0;
+		})
+		.attr("transform","translate("+padding.left+","+padding.bottom+")")
+		//i对应的是数据元素的索引
+		.attr("x",function(h,i){
+//			xScale x轴的刻度
+			return i*xScale.step()+5;
+		})
+		.attr("y",function(h,i){
+			//根据比例尺返回剩余的高度
+			return yScale(0);
+		})
+		.transition() // 启动过渡效果
+		//启用过渡.
+	    .duration(1000)
+		//过渡的速度.
+	    .ease(d3['easeLinear'])
+	    .attr("height",function(h){
+			//返回每个元素在y轴上面对应的一个高度
+			return height-padding.top-padding.bottom-yScale(h);
+		})
+	    .attr("y",function(h,i){
+			//根据比例尺返回剩余的高度
+			return yScale(h);
+		});
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</html>

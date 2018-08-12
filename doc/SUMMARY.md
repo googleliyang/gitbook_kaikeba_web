@@ -16,6 +16,12 @@
 * [15\_lastday\_homework\_teacher\_pagination\_bTable\_code\_framework](day15_formdata_upload_pagination_pro.md)
 * [16\_upload\_bTable\_echarts\_zepto](day16_upload_btable_echarts_zepto.md)
 * [17\_graphics\_d3\_three\_webgl](day17_graphics_d3_three_webgl.md)
+
+
+* [18\_three\_snow\_chain_block](day18_three_snow_qukuailian.md)
+
+* [18\_super\_chain_block](18_sup_qukuailian.md)
+
 * [Time line](tline.md)
 * [FAQ\_LINE](faq_line/README.md)
   * [sourcemap](faq_line/source_map.md)
@@ -25,4 +31,4 @@
   * [postcss stylus sass](faq_line/postcss_stylus_sass.md)
   * [移动端适配](faq_line/yi-dong-duan-bu-ju-fang-an.md)
   * [vue 模块](faq_line/vue.md)
-
+  * [shell](faq_line/shell.md)

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="three/three.js"></script>
+    <script src="three/OrbitControls.js"></script>
+    <style>
+          *{
+               margin: 0;
+               padding: 0;
+          }
+    </style>
+</head>
+<body>
+    <script>
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+
+            /*1：创建舞台*/
+            var scene = new THREE.Scene();
+
+            /*2：创建摄像机*/
+            var camera = new THREE.PerspectiveCamera(50,width/height,0.1,800);
+            //调整摄像机的位置.
+            camera.position.x = 0;
+            camera.position.y = 0;
+            camera.position.z = 10;
+
+            /*摄像机要对准舞台*/
+            camera.lookAt(scene.position);
+            /*3:开始进行录制*/
+            var renderer = new THREE.WebGLRenderer();
+            renderer.setSize(width,height);
+            //把这个canvas 放在页面上.
+            document.body.appendChild(renderer.domElement);
+            /*控制相机*/
+            var orbitControls = new THREE.OrbitControls(camera);
+            //把它的属性改为true
+            orbitControls.autoRotate = true;
+            /*准备几何体*/
+            var geometry = new THREE.Geometry();
+            /*加载纹理，加载图片.*/
+            var texture = new THREE.TextureLoader().load("./images/snow.jpg");
+
+            /*控制图片的材质. 修饰图片*/
+            var material = new THREE.PointsMaterial({
+                  size:20,
+                  map:texture,
+                  transparent:true,
+                  depthWrite:false,
+                  blending:THREE.AdditiveBlending
+            });
+
+            /*准备多个几何体. 而且几何体它都有一个默认的位置.  改位置的，range 是范围.*/
+            var range = 500;
+            for (var i = 0; i < 400; i++) {
+                var	 particle = new THREE.Vector3(
+                        Math.random() * range - range / 2,
+                        Math.random() * range * 1.5,
+                        Math.random() * range - range / 2);
+                particle.velocityY = 0.1 + Math.random() / 5;
+                particle.velocityX = (Math.random() - 0.5) / 3;
+                particle.velocityZ = (Math.random() - 0.5) / 3;
+                geometry.vertices.push(particle);
+            }
+            //将几何体，跟我的装饰进行合并.
+            var points = new THREE.Points(geometry,material);
+            //我要把几何体添加到舞台上去.
+            scene.add(points);
+            //渲染，不间断的去修改位置。
+            render();
+            function render(){
+                renderer.render(scene,camera);
+                //递归，一秒钟执行多少次.
+                scene.children.forEach(function (child) {
+                    if(child instanceof THREE.Points) {
+                        var vertices = child.geometry.vertices;
+                        child.geometry.verticesNeedUpdate = true;
+                        vertices.forEach(function (v) {
+                            v.y = v.y - (v.velocityY);
+                            v.x = v.x - (v.velocityX);
+                            v.z = v.z - (v.velocityZ);
+                            // y 的边界值
+                            if(v.y <= -height / 2) {
+                                v.y = height / 2;
+                            }
+                            // x 的边界值
+                            if(v.x <= -width / 2 || v.x >= width / 2) {
+                                v.velocityX = v.velocityX * -1;
+                            }
+                            // z 的边界值
+                            if(v.z <= -60 || v.z >= 60) {
+                                v.velocityZ = v.velocityZ * -1;
+                            }
+                        })
+                    }
+                });
+                requestAnimationFrame(render);
+            }
+    </script>
+</body>
+</html>
