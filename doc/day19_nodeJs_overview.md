@@ -60,7 +60,7 @@ nodejs 最初激进派和保守派，分离，形成 Node.js io.js, 后又合并
 
 ### node 中常用命令(npm, nvm, nrm ...)
 
-nrm install path
+> nrm install path
 
 ![nrm_install_path](imgs/19/install_path.png)
 
@@ -102,6 +102,8 @@ table_jquery.js
 
 #### exports 重新指向问题
 exports 重新指向后, 将不改变 Module.exports 暴露出模块的值，该模块暴露出的值将是 {}, module.exports 重新赋值后， 可以正常导出
+
+![exports](imgs/19/exports.png)
 
 #### amd, cmd, CommonJs
 
