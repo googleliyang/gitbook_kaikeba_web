@@ -203,14 +203,16 @@ contract Greetings {
 
 1. geth 部分
 
-- 下载并配置 geth
+```
+下载并配置 geth
+```
 
 ```bash
 mkdir -p ~/chainwork/private
 ```
 
-- 创建一个配置文件 genesis.json 用于创建创世块和设置网络
 ```bash
+ 创建一个配置文件 genesis.json 用于创建创世块和设置网络
 {
 // nonce 和 mixhash 是作为输入，让每个节点都可以通过计算来做
 // proof-of-work，确认这个区块的挖掘者确实做了足够多的计算找到了合法的
@@ -249,9 +251,8 @@ mkdir -p ~/chainwork/private
 }
 ```
 
-- 初始化 genesis.json 文件, 启动 geth
-
 ```bash
+ 初始化 genesis.json 文件, 启动 geth
 初始化genesis配置文件
 cd ~/chainwork/private 目录
 geth --datadir . init genesis.json
@@ -280,7 +281,6 @@ eth.getBalance(eth.accounts[0])
 personal.unlockAccount(eth.accounts[0])；
 
 ```
-
 
 2. 添加并解锁账户
 ```
@@ -370,17 +370,6 @@ var contract = {
 
 ```
 
-
-
-
-
-
-
-
-
-
-
-
 ## Tip
 - 当在 webstorm 中 点击 window 上的方法时，如 requestAnimationFrame 可以看到此方法 挂在 window 对象的原型上，而内部实现则由 v8 引擎分装暴露出来
 
@@ -437,6 +426,12 @@ var contract = {
 - 比特币以太坊的数据结构对比
 - RPC
 - 合约地址  undefined https://stackoverflow.com/questions/48219804/undefined-when-contract-code-is-copied-in-geth
+
+- ganache安装以及介绍
+
+下载节点 ganashe是一键安装的私链节点，比自己搭建的私链节点好用一些。他是基于图形化界面的，方便操作。
+
+http://truffleframework.com/ganache/
 
 ## TODO
 

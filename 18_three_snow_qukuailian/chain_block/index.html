@@ -12,16 +12,16 @@
   <script type="text/javascript">
 
   var contract = {
-    address: '0x3737a923b5a409a7a630631e1ae462203f4ed79b',
+    address: '0xcb0d24e398814555802c55c738785a43e8985823',
     abi: [
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "say",
+		"name": "minter",
 		"outputs": [
 			{
 				"name": "",
-				"type": "string"
+				"type": "address"
 			}
 		],
 		"payable": false,
@@ -29,12 +29,62 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
+		"constant": true,
+		"inputs": [],
+		"name": "getBalance",
+		"outputs": [
 			{
-				"name": "_greeting",
-				"type": "string"
+				"name": "",
+				"type": "uint256"
 			}
 		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "payMoney",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "kill",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "sender",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "getMoney",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "constructor"
@@ -50,10 +100,18 @@
     // web3 call
 
     var myContract = new web3.eth.Contract(contract.abi, contract.address);
-    myContract.methods.say().call().then(res => {console.log('the contract res is', res)});
+    myContract.methods.getBalance().call().then(res => {console.log('the contract res is', res)});
 
     //分析 new web3.eth.Contract(jsonInterface[, address][, options])
+  //  eth.sendTransaction({
+  //    from:eth.accounts[0],
+  //    // to: '0x57e64b081578c7cb756fd32b30044637aaf28066',
+  //    to: eth.accounts[1],
+  //    value:web3.toGas(100),
+  //  })
 
+// 金额转账
+//  eth.sendTransaction({from:eth.accounts[0], to:eth.accounts[1], value: web3.toWei(100, "ether")})
 
 </script>
 </body>
