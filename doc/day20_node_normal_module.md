@@ -48,6 +48,7 @@ console.log(path.parse(__dirname))
 ```
 
 > Node 后台中 需要设置 views 路径
+
 ```js
 App.set('views', path.join(__dirname ,'views'))
 
