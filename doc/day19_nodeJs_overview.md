@@ -40,6 +40,7 @@ Nodejs 实现了 CommonJs 规范，可以使用 exports modules.exports 导出�
 - 进程管理
 - 数据库操作
 - 无法再进行 dom 操作
+- 不存在版本兼容性问题，根据你选择的 Node 版本而定
 
 ### 网易 pomelo
 
@@ -94,6 +95,12 @@ nodemon app.js
 ### 模块
 
 ![module](imgs/19/module.png)
+
+Node js 模块分为
+
+- 内置模块, 如 path, url, http, 其中 process, buffer 默认加载， 多数用到的时候 需要 require 进来
+
+- 文件模块 | 第三方模块
 
 早先解决模块问题, 使用 命名，文件开头引入, 如 table 依赖 jquery 则命令为
 ```
