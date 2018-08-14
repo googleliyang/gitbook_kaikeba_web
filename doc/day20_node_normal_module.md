@@ -1,6 +1,11 @@
 This class for node commmonly module, such as path, url, querystring, http ...
 
-
+| 8.14     |      |
+| :------------- | :------------- |
+|  Path       |  √       |
+|  Htpp       | √       |
+|  Url       | √       |
+|  querystring       | √       |
 
 ## require 
 
