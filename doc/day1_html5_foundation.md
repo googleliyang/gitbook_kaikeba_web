@@ -10,7 +10,6 @@
 
 ### Tip
 
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 
 * chrome 在第二次播放时，autoplay 失效
 
@@ -20,5 +19,4 @@
 
 * chrome 在第二次播放时，autoplay 失效
 
-> > > > > > > 896eddc0f8ee8ff4d8856a3a990b6e886fd0a877
 
