@@ -8,6 +8,7 @@
 * [5\_prototype\_ao\_eo](day5_prototype_ao_eo.md)
 * [6\_closure\_ad\_func](day6_closure_ad_func.md)
 * [7\_js\_design\_animation](day7_js_design_animation.md)
+* [8\_jq\_source\_animation\_regex](day8_jquery_source_animation_regex.md)
 * [9\_php\_server](day9_php_server.md)
 * [10\_http\_sql](day10_http_sql.md)
 * [12\_http\_jq\_ajax\_frame](day12_http_jq_ajax_frame.md)
