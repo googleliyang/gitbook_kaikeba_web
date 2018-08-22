@@ -1,5 +1,23 @@
 ## Mac develop env
 
+## zsh config git add && git commit -m $1 && git push
+
+- open ~/.oh_my_zsh/plugins/git
+
+- add below
+
+```
+function g_add_commit_push {
+  git add -A && git commit -m "$1" ; git push;
+}
+alias gcamp='g_add_commit_push'
+```
+
+> Use
+
+```sh
+gcamp ${commitMsg}
+```
 
 ## Nvm
 
