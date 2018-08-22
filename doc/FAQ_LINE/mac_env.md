@@ -2,6 +2,8 @@
 
 ## zsh config git add && git commit -m $1 && git push
 
+refer: https://github.com/robbyrussell/oh-my-zsh/issues/4108
+
 - open ~/.oh_my_zsh/plugins/git
 
 - add below
