@@ -34,4 +34,4 @@
   * [移动端适配](faq_line/yi-dong-duan-bu-ju-fang-an.md)
   * [vue 模块](faq_line/vue.md)
   * [shell](faq_line/shell.md)
-  * [mac env](faq_line/mac_env.md)
+  * [mac env](FAQ_LINE/mac_env.md)
