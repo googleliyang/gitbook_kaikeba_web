@@ -9,6 +9,7 @@ refer: https://github.com/robbyrussell/oh-my-zsh/issues/4108
 - add below
 
 ```
+// $1 is terminal first param 
 function g_add_commit_push {
   git add -A && git commit -m "$1" ; git push;
 }
