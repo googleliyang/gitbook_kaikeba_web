@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [main_point](main_point.md)
+* [Main_point](main_point.md)
 * [1\_html5\_foundation\_filereader](day1_html5_foundation.md)
 * [2\_html5\_canvas\_location](day2_html5_canvas_location.md)
 * [3\_css3\_animation\_transform\_bg...](day3_css3.md)
