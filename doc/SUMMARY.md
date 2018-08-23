@@ -25,6 +25,7 @@
 * [21\_fs\_stream\_event](day21_fs_stream_event.md)
 * [22\_socket\_chat](day22_socket_chat.md)
 * [Time line](tline.md)
+* [Issue](issue.md)
 * [FAQ\_LINE](faq_line/README.md)
   * [sourcemap](faq_line/source_map.md)
   * [js\_art\_skill](faq_line/js_art_skill.md)
