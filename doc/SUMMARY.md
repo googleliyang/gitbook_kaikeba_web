@@ -35,3 +35,8 @@
   * [vue 模块](faq_line/vue.md)
   * [shell](faq_line/shell.md)
   * [mac env](FAQ_LINE/mac_env.md)
+  * [计算机编译原理](FAQ_LINE/计算机编译原理.md)
+
+* [Blue_class](blue/README.md)
+  * [es6](blue/1_es6.md)
+  * [blue_promise_generate](blue/promise_generate_async.md)
