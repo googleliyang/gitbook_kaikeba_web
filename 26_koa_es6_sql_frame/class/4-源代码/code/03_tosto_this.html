@@ -1,0 +1,50 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>点我</button>
+
+    <script type="text/javascript">
+        // 获取button
+        var button = document.querySelector('button');
+        // var obj = {
+        //     name:'jack',
+        //     init:function() {
+        //         // 为了使用obj对象，我们可以存起来
+        //         var that = this;
+        //         // this属性 是obj
+        //         button.onclick = function() {
+        //             // this  是事件对象
+        //             console.log(this); // 大大的button
+        //             console.log(that.name);
+        //         }
+        //     }
+        // };
+        // obj.init();
+
+        // this 是window
+
+        var obj = {
+            name:'jack',
+            init:()=> {
+                button.onclick = ()=> {
+                    // button 变为?
+                    console.log(this); 
+                    // 箭头函数自身没有this,向上级function绑定this
+                }
+            }
+        };
+        obj.init();
+
+        console.log('xxxx'); // 执行的时候，就拼到一起去了
+        // this：window
+        (function(){
+            console.log(this);
+        })();
+
+
+    </script>
+</body>
+</html>

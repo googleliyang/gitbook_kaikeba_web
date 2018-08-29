@@ -1,5 +1,8 @@
-For introduce Api Docuemention read . 
+For introduce Api Docuemention read .
 
+https://stackoverflow.com/questions/10925478/how-to-read-api-documentation-for-newbs
+
+## Issue URL
 
 
 ![](/Users/ly/Programmer/kaikeba/doc/imgs/other/fill_path.png)
@@ -13,10 +16,10 @@ For introduce Api Docuemention read .
 # ? [, 123[[]] 这种如何看？
 
 
+
+##
 
-## 
-
-## Example 
+## Example
 
 
 
@@ -59,7 +62,7 @@ myPath.fillPath(myNewColor)
 
 ##  
 
-看到如上文档，难以想象出 如何去 使用这个方法 
+看到如上文档，难以想象出 如何去 使用这个方法
 
 
 
@@ -96,7 +99,7 @@ OK，假设 [] 是可省略参数，但是单看文档 如何看出呢
 
 
 
-##  为什么 Api 文档这么写 
+##  为什么 Api 文档这么写
 
 
 
@@ -114,7 +117,7 @@ https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form
 
 
 
-- 并没有完全统一的约束，但是使用比较广泛的是  [man page synposis format](http://cm.bell-labs.com/cm/cs/who/dmr/manintro.html) 
+- 并没有完全统一的约束，但是使用比较广泛的是  [man page synposis format](http://cm.bell-labs.com/cm/cs/who/dmr/manintro.html)
 
 > 展示一些使用例子
 
@@ -122,7 +125,7 @@ Underlined words are considered literals, and are typed just as they appear.
 
 Square brackets ( [] ) around an argument indicate that the argument is optional.   可选
 
-Ellipses ... are used to show that the previous argument-prototype may be repeated. 表示可以重复前一个原型 
+Ellipses ... are used to show that the previous argument-prototype may be repeated. 表示可以重复前一个原型
 
 An argument beginning with a minus sign - is often taken to mean some sort of flag argument even if it appears in a position where a file name could appear.以减号开头的参数 - 通常用于表示某种标志参数
 
@@ -211,13 +214,13 @@ fillPath(#000000,,50) // Black, no mode, half opacity
 
 可以看出第一个参数 必须， 而是直接第二个参数是 任意类型
 
-console.timelog('tem') 则会出错，此时需要第一个参数必需传，而 [arg1][, arg2] 你怎么穿都会出错(arg1][,arg2]) 
+console.timelog('tem') 则会出错，此时需要第一个参数必需传，而 [arg1][, arg2] 你怎么穿都会出错(arg1][,arg2])
 
 
 
 # ? 为什么不是以一个对象直接传入呢 ?
 
-## Tip 
+## Tip
 
 大多数文档的顶部都应该有一个解释，解释其中使用的约定。
 
@@ -267,7 +270,7 @@ console.log(1, 2)
 
 
 
-> 省略 options 
+> 省略 options
 
 ```js
 fs.appendFile('message.txt', 'data to append', (err) => {
@@ -278,7 +281,7 @@ fs.appendFile('message.txt', 'data to append', (err) => {
 
 
 
-如果 `options` 是一个字符串，则它指定了字符编码。例如： 
+如果 `options` 是一个字符串，则它指定了字符编码。例如：
 
 ```js
 fs.appendFile('message.txt', 'data to append', 'utf8', callback);
@@ -291,4 +294,3 @@ fs.appendFile('message.txt', 'data to append', 'utf8', callback);
 ```js
 fs.appendFile('message.txt', 'data to append', {encoding: 'utf8', mode: 0o666}, callback);
 ```
-

@@ -25,6 +25,9 @@
 * [21\_fs\_stream\_event](day21_fs_stream_event.md)
 * [22\_socket\_chat](day22_socket_chat.md)
 * [23\_express](day23_express.md)
+* [24\_express_mid_pro](day24_express_mid_pro.md)
+* [25_koa_source_pro](day25_koa_source_pro.md)
+* [26_koa_es6_sql_frame](day26_koa_es6_sql_frame.md)
 * [Time line](tline.md)
 * [Issue](issue.md)
 * [FAQ\_LINE](faq_line/README.md)
@@ -37,6 +40,7 @@
   * [vue 模块](faq_line/vue.md)
   * [shell](faq_line/shell.md)
   * [mac env](FAQ_LINE/mac_env.md)
+  * [common issue](FAQ_LINE/common_issue.md)
   * [计算机编译原理](FAQ_LINE/计算机编译原理.md)
 
 * [Blue_class](blue/README.md)

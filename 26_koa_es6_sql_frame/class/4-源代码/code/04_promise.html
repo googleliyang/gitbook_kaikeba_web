@@ -1,0 +1,72 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="send">发请求</button>
+
+    <script type="text/javascript">
+    // promise是一个异步容器（装）
+    // 在装的过程中，需要记录成功或者失败 两个参数
+        function sendAjax (url) {
+           var p = new Promise(function(resolve,reject) {
+
+               var xhr = new XMLHttpRequest();
+               xhr.open('get',url);
+               xhr.send();
+               xhr.onreadystatechange = function () {
+
+                    // 如果没有接收完毕，不做处理 3
+                 if (xhr.readyState !== 4) return;
+
+                 if(xhr.readyState === 4 && xhr.status === 200) {
+                      alert(xhr.responseText);
+                      resolve(xhr.responseText); // 一定成功
+                      // 当然业务上有失败，就调用reject
+                  } else {
+                      reject('请求失败');
+                  }
+               }
+           });
+           return p;
+        }
+
+        // 基本使用成功或者失败
+        // var btn = document.getElementById('send');
+        // btn.onclick = function() {
+        //     sendAajx('./14.json')
+        //     .then(function(data) {
+        //         console.log(data);
+        //         console.log('1.json请求完毕')
+        //     })
+        //     .catch(function(err) {
+        //         console.log(err);
+        //     })
+        // }
+
+        // 多次使用
+        var btn = document.getElementById('send');
+        btn.onclick = function() {
+            sendAjax('./1.json')
+            .then(function(data) {
+                // 1.json的后续行为
+                return sendAjax('./2.json');
+            })
+            // then中的function 执行后的返回值会作为下一个then的执行依据
+            .then(function(data) {
+                return sendAjax('./3.json');
+            })
+            .then(function() {
+                console.log('请求执行完毕');
+            })
+            .catch(function(err) {  // 公用一个catch
+                console.log(err);
+            })
+        }
+
+
+    </script>
+
+</body>
+</html>
