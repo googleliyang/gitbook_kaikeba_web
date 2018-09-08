@@ -142,3 +142,13 @@ sudo dpkg-reconfigure lightdm
 > VNC
 
 VNC [ Virtual Network Computing ]是一款优秀的远程控制工具软件
+
+## mysql mycli
+
+```sh
+brew update && brew install mycli
+```
+
+## add web search to alfred !nice
+
+http://www.css88.com/dev/

@@ -30,10 +30,15 @@
 * [26_koa_es6_sql_frame](day26_koa_es6_sql_frame.md)
 * [27_koa_artT_sql_transaction](day27_koa_artT_sql_transaction.md)
 * [28_module_frame_config_origin_promise](day28_module_frame_config_origin_promise.md)
+
+
+* [29_koa_music_upload_sessionSign](day29_koa_music_upload_sessionSign.md)
+
 * [Time line](tline.md)
 * [Issue](issue.md)
 * [FAQ\_LINE](faq_line/README.md)
   * [sourcemap](faq_line/source_map.md)
+  * [linux](faq_line/linux.md)
   * [js\_art\_skill](faq_line/js_art_skill.md)
   * [improve logic](faq_line/improve_logic.md)
   * [computer byte exec origin](faq_line/byte_computer_exec_origin.md)
@@ -44,6 +49,7 @@
   * [mac env](FAQ_LINE/mac_env.md)
   * [common issue](FAQ_LINE/common_issue.md)
   * [计算机编译原理](FAQ_LINE/计算机编译原理.md)
+  * [Rss_feed43](FAQ_LINE/rss_subsribe.md)
 
 * [Blue_class](blue/README.md)
   * [es6](blue/1_es6.md)

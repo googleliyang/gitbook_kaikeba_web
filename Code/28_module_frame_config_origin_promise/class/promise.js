@@ -11,7 +11,7 @@ function Promise(fn) {
     this.deffered = []; // 下一个要执行的Promise是谁，子promise
 // 3:构造函数内调用函数(apply参数是数组,call参数是一个个的，调用函数改变this指向)
     fn.call(this,this.resolve.bind(this),this.reject.bind(this) );
-    
+
 }
 
 // 4: 结束回调函数，执行then  Promise.prototype.then 是函数
@@ -41,7 +41,7 @@ Promise.prototype = {
         var value = this.value;
         var p;
         switch(status) {
-            case FULFILLED: 
+            case FULFILLED:
                 p = task.onfulfilled(value);
                 break;
             case REJECTED:
@@ -71,7 +71,7 @@ Promise.prototype = {
         // 并且能根据不同的Promise去then
         obj.promise = new this.constructor(function(){});
         // 保存起接下来的子promise
-        
+
         // console.log(this);  // 1
         // console.log(obj.promise); // 2
 
@@ -81,7 +81,7 @@ Promise.prototype = {
         }
 
         // 保证不报错  ,未来不能return自己 需要换人 此处 如果继续  reuturn 当前 Promise then 方法将得到多次执行,  返回  空的 promise 继续正promise可以 .then 又可以不报错
-        return this;  // 下一个then的哥们
+        return obj.promise;  // 下一个then的哥们
     }
 
 }
@@ -89,12 +89,12 @@ Promise.prototype = {
 
 new Promise(res => {
 	setTimeout(() => {
- 		console.log(3) 
+ 		console.log(3)
 		res()
 }, 3000	)
 }).then(res => {
 	setTimeout(()=>{
 		console.log(2)
-		
+
     }, 1000)
 })

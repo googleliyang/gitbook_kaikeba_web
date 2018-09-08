@@ -257,6 +257,9 @@ Promise.prototype = {
 
         // 新来一个Promise对象, 让其存储这些，
         // 并且能根据不同的Promise去then
+        // *new 时 新生成promise 创建.then 函数并将then 函数内的 实参 传入 deffer数组
+        // then 中继续返回 promise 时， 因为要调用 promise 的 resolve()，resolve 绑定的 promise deffer 中存放 then 的回调
+        // 所以 要将 当前 new 出来的 promise 存放 回调函数的 deffered 数组 赋值给 then 成功回调返回的 promise, 等待其 resolve 时执行
         obj.promise = new this.constructor(function(){});
         // 保存起接下来的子promise
 
