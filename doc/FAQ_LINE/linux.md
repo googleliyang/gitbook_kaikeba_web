@@ -69,4 +69,58 @@ ps -ef |grep {node}
 
 - nginx -t 查找配置文件，监听访问即可
 
-## 流量出口 网关，用户权限，docker 权限
+## 流量出口 网关，用户权限
+
+## docker 权限，原理，以及工作中常用  Linux 命令总结
+
+- 任何框架都是为了让问题简单化
+- 任何描述某个原理性的东西 都有自我出发理解至于同一感觉
+
+> 查看是否存在某个服务进程
+
+```
+ps -ef |grep {name} |grep {work folder}
+```
+
+> 已知端口查看是否处于 监听状态
+
+```
+netstat -anp |grep {port}
+```
+
+> 查看某个进行运行用户，以及对其文件所拥有的权限
+```sh
+ps -ef |grep 第一列 || ps -aux |grep 第一列
+
+# such as
+
+ps -ef |grep node |grep vpn
+```
+
+> 查看系统存在哪些用户
+
+```
+less | more /etc/passwd
+```
+
+> 查看用户所属组
+
+```
+groups {uId}
+```
+
+## Docker
+
+- docker ， 本地文件挂载到docker中，本地文件权限，同docker权限一致，本地文件 增删改查，同步到docker中
+
+## docker 工作原理图
+
+![docker_img](imgs/docker.png)
+
+> Curl -L 追踪冲重定向
+
+```
+curl -L localhost:8081 // web-admin
+```
+
+## Sudo run server, ps -ef 将看到用户执行是 root
