@@ -123,4 +123,89 @@ groups {uId}
 curl -L localhost:8081 // web-admin
 ```
 
+> Curl -O {address} | bash
+
 ## Sudo run server, ps -ef 将看到用户执行是 root
+
+## 禁用 Ping 功能
+
+```
+centos7系统
+
+临时修改
+
+echo 1 >/proc/sys/net/ipv4/icmp_echo_ignore_all
+
+    1 表示禁ping
+
+    0 表示开启ping
+
+
+
+或者：
+
+sysctl -w net.ipv4.icmp_echo_ignore_all=1
+
+    1 表示禁ping
+
+    0 表示开启ping
+```
+
+## 匹配文本 grep -p {text} ./*
+
+## 测试端口服务
+
+> 服务器为了安全起见可能会关闭  ping，这个时候，可以使用
+
+> iptable 可以拦截 ping 请求
+
+> 去除 iptable ping 拦截
+
+查看iptables策略，使用-D删除相应的icmp报文策略
+具体的策略
+iptables -D INPUT  -p icmp  -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -D INPUT  -i eth0 -p icmp -j DROP
+
+> 原理
+
+ping其实就是发送icmp包，并得到相应。路由可以丢弃icmp包，服务器，亦可以忽略之
+
+> ping 关闭的服务器如何测试  | hping
+
+https://www.slashroot.in/what-tcp-ping-and-how-it-used
+
+> hping3 功能测试
+
+
+- 防火墙测试
+- 高级端口扫描
+- 网络测试，使用不同的协议，TOS，分片
+- 手动路径MTU发现
+- 在所有支持的协议下，高级traceroute
+- 远程操作系统指纹
+- 远程正常运行时间猜测
+- TCP/IP协议栈审计
+- hping也可以用于学习TCP/IP的学生
+
+> install hping3
+
+```
+do this in terminal:
+brew uninstall hping
+cd ~
+mkdir hping
+cd hping
+git clone https://github.com/antirez/hping.git
+brew install tcl-tk
+brew install libpcap
+./configure
+make
+sudo make install
+hping
+
+// 将 命令 拷贝至 /usr/local/sbin 下， ~/.bashrc 配置 path 后source 即可
+
+PATH=$PATH:/usr/local/sbin
+
+// hping3 -h // 使用时 加 sudo
+```

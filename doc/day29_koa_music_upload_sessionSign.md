@@ -63,9 +63,45 @@ app.use(checkLogin(routerList))
 
 ## check login 代码
 
-? copy
-```
 
+```
+module.exports = function(routeList) {
+    function _checkLogin (ctx) {
+        return ctx.session.user;  // true: 有用户
+    }
+    // 给use函数使用的函数
+    return async function (ctx,next) {
+        let isNext = true;
+        // 遍历routeList
+        routeList.forEach( async route => {
+            // 如果是正则
+            if (route instanceof RegExp) {
+                if(route.test(ctx.url)) {   
+                    //验证是否登录
+                  isNext = _checkLogin(ctx)
+                }
+            }
+            // 如果是字符串
+            if(route === ctx.url) {
+                // 验证是否登录
+               isNext = _checkLogin(ctx)
+            }
+        });
+        if(isNext) {
+            console.log('放行了');
+             await next();// 都不满足  不放行的条件
+        } else {
+            console.log('不放行');
+            await ctx.render('error',{
+                msg:'您为未登录'
+            });
+            return;
+
+        }
+
+
+    }
+}
 
 ```
 
@@ -83,6 +119,8 @@ app.use(checkLogin(routerList))
 - 2 根据 与 public 目录的关系，将文件路径存放到数据库
 
 - 3 /public/files/1.mp3 正确的 url 路径，因为我们已经把 把public 默认去除了 在当前项目中(路由拦截器)
+
+![music_save](imgs/29/music_save.png)
 
 ### 处理上传的音乐
 
