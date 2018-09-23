@@ -34,6 +34,17 @@
 
 * [29_koa_music_upload_sessionSign](day29_koa_music_upload_sessionSign.md)
 
+* [day30_continue_music_throtting](day30_continue_music_throtting.md)
+
+
+* [day31_node_last_deploy](day31_node_last_deploy.md)
+
+
+* [vue](vue/README.md)
+  * [day32_vue1_command_component_base](vue/day32_vue1_command_component_base.md)
+
+  * [day33_vue2_communication_watch_compute](vue/day33_vue2_communication_watch_compute.md)
+
 * [Time line](tline.md)
 * [Issue](issue.md)
 * [FAQ\_LINE](faq_line/README.md)
