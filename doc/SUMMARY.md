@@ -42,13 +42,9 @@
 
 * [vue](vue/README.md)
   * [day32_vue1_command_component_base](vue/day32_vue1_command_component_base.md)
-
   * [day33_vue2_communication_watch_compute](vue/day33_vue2_communication_watch_compute.md)
-
   * [day34vue_router_communication_life](vue/day34vue_router_communication_life.md)
-
   * [day35_permission_control_axios](vue/day35_permission_control_axios.md)
-
   * [day36_axios_webpack](vue/day36_axios_webpack.md)
 
 * [Time line](tline.md)
