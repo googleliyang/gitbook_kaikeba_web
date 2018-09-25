@@ -47,7 +47,6 @@
 
   * [day34vue_router_communication_life](vue/day34vue_router_communication_life.md)
 
-
   * [day35_permission_control_axios](vue/day35_permission_control_axios.md)
 
   * [day36_axios_webpack](vue/day36_axios_webpack.md)
