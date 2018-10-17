@@ -63,6 +63,8 @@
   * [common issue](FAQ_LINE/common_issue.md)
   * [计算机编译原理](FAQ_LINE/计算机编译原理.md)
   * [Rss_feed43](FAQ_LINE/rss_subsribe.md)
+  * [http_web_safe](FAQ_LINE/http_safe.md)
+  * [laravel_with_vue](FAQ_LINE/laravel_with_vue.md)
 
 * [Blue_class](blue/README.md)
   * [es6](blue/1_es6.md)

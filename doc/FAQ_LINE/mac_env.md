@@ -4,6 +4,10 @@
 
 refer: https://github.com/robbyrussell/oh-my-zsh/issues/4108
 
+## zsh plugin | nice , auto complemetion ...
+
+https://github.com/zsh-users
+
 - open ~/.oh_my_zsh/plugins/git
 
 - add below
