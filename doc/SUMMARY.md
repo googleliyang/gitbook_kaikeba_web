@@ -52,6 +52,7 @@
 * [FAQ\_LINE](faq_line/README.md)
   * [sourcemap](faq_line/source_map.md)
   * [linux](faq_line/linux.md)
+  * [nginx_server_name](faq_line/nginx_server.md)
   * [js\_art\_skill](faq_line/js_art_skill.md)
   * [improve logic](faq_line/improve_logic.md)
   * [computer byte exec origin](faq_line/byte_computer_exec_origin.md)
