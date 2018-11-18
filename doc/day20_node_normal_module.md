@@ -7,17 +7,17 @@ This class for node commmonly module, such as path, url, querystring, http ...
 |  Url       | √       |
 |  querystring       | √       |
 
-## require 
+## require
 
  > require 执行，如果文件是第一次被加载，将会执行代码加载到缓存中，第二次加载时，将直接从缓存中取，不再执行
 
 
 ## Node.js 常用模块
 
-### Path 
+### Path
 
 
-```js 
+```js
 // todo: code try
 // path.join 相比对原生 字符串拼接，会兼容 windows(不同操作胸膛下路径分隔符不同)
 path.join(__dirname, '/views')   
@@ -46,7 +46,7 @@ console.log(path.resolve('./views', 'views'))
         base: '20_node_module_use',
         ext: '',
         name: '20_node_module_use'
-    } 
+    }
     */
 console.log(path.parse(__dirname))
 
@@ -75,7 +75,7 @@ url.resolve(from, to)
 
 编写代码过程中，参数通常是 &name={}&age={} 的字符串，而diamante中通常使用 对象来表示，二者之间转换可以使用 querystring 模块
 
-#### Escape 
+#### Escape
 
 在进行http 数据传输时，通常需要对数据进行编码, &... 以及中文字符都会得到编码， 可以防止sql 输入以及数据传输失败, 在服务器收到数据后 济宁unescape 解码
 
@@ -87,7 +87,7 @@ url.resolve(from, to)
 ...
 > querystring.unescape('ni%26')
 'ni&'
-> 
+>
 ```
 
 ### Http
@@ -143,19 +143,19 @@ server.listen(8888, (err) => {
  res.writeHead(200, {
         'Content-Type': 'text/plain;charset=utf-8'
     })
-``` 
+```
 > json
 ```js
  res.writeHead(200, {
         'Content-Type': 'application/json;charset=utf-8'
-    }) 
-``` 
+    })
+```
 > html
 ```js
   res.writeHead(200, {
         'Content-Type': 'text/html;charset=utf-8'
     })
-``` 
+```
 
 > 响应值 200 问题
 
@@ -167,10 +167,10 @@ server.listen(8888, (err) => {
 
 ## Tip
 
-- 前端模块化  amd, cmd 
+- 前端模块化  amd, cmd
 - node.js 模块化, commond.js
 - node 中 一个文件是一个模块，用了 webpack 之后所有皆是模块
-- 在使用 url 模块时， linux Mac 没有盘符概念 默认指向的就是   / 
+- 在使用 url 模块时， linux Mac 没有盘符概念 默认指向的就是   /
 - webpack 大量使用 fs 操作文件
 - node vsc提示插件 typings, 安装完提示便有了
 

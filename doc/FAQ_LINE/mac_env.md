@@ -8,6 +8,16 @@ refer: https://github.com/robbyrussell/oh-my-zsh/issues/4108
 
 https://github.com/zsh-users
 
+> 11.19 补充 iterm 中使用 vi  输入 Linux 命令
+
+- cd ~/.oh-my-zsh/custom/plugins  mkdir vi-mode
+
+https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/vi-mode
+
+download vi-mode.plugin.zsh, then config to zsh plugins
+
+> & you can add web-search direct, It's very nice
+
 - open ~/.oh_my_zsh/plugins/git
 
 - add below
@@ -156,3 +166,16 @@ brew update && brew install mycli
 ## add web search to alfred !nice
 
 http://www.css88.com/dev/
+
+## sublime
+
+- vim plugin
+
+vimtage + Vintageous
+
+refer: https://stackoverflow.com/questions/44467302/how-does-one-copy-an-arbitrary-block-of-text-in-sublime-text-3s-vintage-mode
+
+```
+Sublime's Vintage mode simply doesn't support it, unfortunately.
+If you'd like a better Vim support, try the Vintageous package. It indeed supports the y`x you are looking for (just tried it).
+```
